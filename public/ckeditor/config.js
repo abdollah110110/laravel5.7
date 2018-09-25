@@ -1,5 +1,5 @@
 function config_codesnippet(textarea_id) {
-
+    
     CKEDITOR.disableAutoInline = true;
 
     var config = {

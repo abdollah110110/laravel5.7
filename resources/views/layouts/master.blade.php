@@ -14,12 +14,20 @@
         <link href="/css/themify-icons.css" rel="stylesheet" type="text/css">
         <link href="/css/vazir.css" rel="stylesheet" type="text/css">
         <link href="/css/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="/ckeditor/plugins/codesnippet/lib/highlight/styles/vs.css" rel="stylesheet"/>
+        <script src="/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 
     </head>
     <body>
-        
+
         @yield('content')
-        
+
+        <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src='/ckeditor/ckeditor.js'></script>
+        <script src='/ckeditor/ckfinder/ckfinder.js'></script>
+        <script src='/ckeditor/config.js'></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
