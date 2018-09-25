@@ -9,11 +9,17 @@
 
         <!-- Fonts -->
         <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="/css/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="/css/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="/css/vazir.css" rel="stylesheet" type="text/css">
+        <link href="/css/styles.css" rel="stylesheet" type="text/css">
 
     </head>
     <body>
         
         @yield('content')
         
+        <script src="/js/bootstrap.min.js"></script>
     </body>
 </html>

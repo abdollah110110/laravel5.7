@@ -5,5 +5,8 @@
 @endsection
 
 @section('content')
-main page
+<div class="jumbotron">
+    <h1><i class="ti-home"></i>صفحه اصلی فروشگاه شاین</h1>
+    <p>صفحه اصلی فروشگاه شاین صفحه اصلی فروشگاه شاین صفحه اصلی فروشگاه شاین صفحه اصلی فروشگاه شاین </p>
+</div>
 @endsection
