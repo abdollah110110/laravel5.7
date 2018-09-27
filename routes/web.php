@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/', 'MainController@index')->name('home');
+Route::get('/', 'CategoryController@index')->name('home');

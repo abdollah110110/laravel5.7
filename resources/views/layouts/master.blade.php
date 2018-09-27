@@ -20,8 +20,11 @@
 
     </head>
     <body>
+        
+        <section id="content" class="container-fluid my-3">
+            @yield('content')
+        </section>
 
-        @yield('content')
 
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
