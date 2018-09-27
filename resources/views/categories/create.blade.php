@@ -2,15 +2,15 @@
 
 
 @section('title')
-- موضوعات
+- ایجاد موضوع جدید
 @endsection
 
 
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center">
-        <h2>موضوعات</h2>
-        <a href="{{ route('categories.create') }}" class="btn btn-success">ایجاد موضوع جدید</a>
+        <h2>ایجاد موضوع جدید</h2>
+        <a href="{{ route('categories.index') }}" class="btn btn-primary">برگشت به صفحه قبل</a>
     </div>
   
     <hr />
