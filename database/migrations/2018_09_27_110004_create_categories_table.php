@@ -23,7 +23,7 @@ class CreateCategoriesTable extends Migration
                     ->onDelete('cascade');
             
             $table->string('name');
-            $table->boolean('active');
+            $table->boolean('active')->default(false);
             
             $table->timestamps();
         });

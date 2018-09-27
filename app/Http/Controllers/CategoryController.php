@@ -14,7 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categories.index');
+        
+        $categories = Category::latest()->paginate(30);
+        
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -35,7 +38,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3'
+        ]);
+        
+        $category = new Category();
+        $category->name = $request->name;
+        $category->save();
+        
+        session()->flash('success', 'موضوع جدید با موفقیت ثبت شد.');
+        
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -46,7 +59,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -80,6 +93,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        
+        session()->flash('success', 'موضوع مورد نظر با موفقیت حذف شد.');
+        
+        return redirect(route('categories.index'));
     }
 }

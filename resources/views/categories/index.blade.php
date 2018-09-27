@@ -15,6 +15,8 @@
   
     <hr />
     
+    @include('includes.session-flash')
+    
     @if(isset($categories) && count($categories) > 0)
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -33,7 +35,7 @@
                         {{ $i++ }}
                     </td>
                     <td>
-                        <a href="{{ route('categories.show', ['id' => $category->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $category->title }}</a>
+                        <a href="{{ route('categories.show', ['id' => $category->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $category->name }}</a>
                     </td>
                     <td>
                         <form action="{{ route('categories.destroy', ['id' => $category->id]) }}" method="POST">
@@ -52,11 +54,11 @@
     </div>
 
     <div class="text-center">
-        {{ $categorys->render() }}
+        {{ $categories->render() }}
     </div>
     @else
     <div class="alert alert-warning text-center">
-        <h4>هیچ موردی یافت نشد.</h4>
+        <h4>هیچ موردی برای نمایش یافت نشد.</h4>
     </div>
     @endif
 

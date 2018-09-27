@@ -15,50 +15,25 @@
   
     <hr />
     
-    @if(isset($categories) && count($categories) > 0)
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-            <thead class="text-center bg-light">
-                <tr>
-                    <th style="width:5%;">#</th>
-                    <th style="width:80%;">عنوان مقاله</th>
-                    <th style="width:15%;">تنظیمات</th>
-                </tr>
-            </thead>
-            <?php $i = 1; ?>
-            <tbody>
-                @foreach($categories as $category)
-                <tr>
-                    <td>
-                        {{ $i++ }}
-                    </td>
-                    <td>
-                        <a href="{{ route('categories.show', ['id' => $category->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $category->title }}</a>
-                    </td>
-                    <td>
-                        <form action="{{ route('categories.destroy', ['id' => $category->id]) }}" method="POST">
-                            {!! csrf_field() !!}
-                            {{ method_field('DELETE') }}
-                            <div class="btn-group">
-                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-warning" target="_blank">ویرایش</a>
-                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('آیا مطمئن هستید؟');">حذف</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
-    <div class="text-center">
-        {{ $categorys->render() }}
-    </div>
-    @else
-    <div class="alert alert-warning text-center">
-        <h4>هیچ موردی یافت نشد.</h4>
-    </div>
-    @endif
-
+    <form action="{{ route('categories.store') }}" method="POST" class="form-horizontal bg-light py-5 px-3">
+        {{ csrf_field() }}
+        <div class="form-group row {{ $errors->has('name') ? 'has-error' : '' }}">
+            <label for="name" class="col-lg-2 col-form-label text-lg-left">نام:</label>
+            <div class="col-lg-6">
+                <input class="form-control" type="text" id="name" name="name" placeholder="نام را وارد کنید...">
+            </div>
+            <div class="col-lg-4 d-flex align-items-lg-center mt-sm-1">
+                @if($errors->has('name'))
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                @else
+                    <small class="text-muted">راهنما برای فیلد</small>
+                @endif
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-success">ایجاد</button>
+        </div>
+    </form>
+    
 </div>
 @endsection
