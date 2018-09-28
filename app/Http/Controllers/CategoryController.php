@@ -70,7 +70,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -82,7 +82,35 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'active' => 'boolean',
+        ]);
+        
+        $save = 0;
+        
+        if($request->name != $category->name){
+            $category->name = $request->name;
+            $save = 1;
+        }
+        
+        if(isset($request->active) && $request->active != $category->active){
+            $category->active = $request->active;
+            $save = 1;
+        }
+        else if(!isset($request->active)){
+            $category->active = 0;
+            $save = 1;
+        }
+        
+        $category->save();
+        
+        if($save == 1)
+            session()->flash('success', 'ویرایش با موفقیت انجام شد.');
+        else if($save == 0)
+            session()->flash('warning', 'ویرایش انجام نشد - هیچ تغییری وجود نداشت.');
+        
+        return redirect(route('categories.index'));
     }
 
     /**

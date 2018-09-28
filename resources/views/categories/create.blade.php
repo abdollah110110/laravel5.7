@@ -26,7 +26,7 @@
                 @if($errors->has('name'))
                     <small class="text-danger">{{ $errors->first('name') }}</small>
                 @else
-                    <small class="text-muted">راهنما برای فیلد</small>
+                    <small class="text-muted">فقط حروف وارد کنید</small>
                 @endif
             </div>
         </div>

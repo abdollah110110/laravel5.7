@@ -24,7 +24,8 @@
                 <tr>
                     <th style="width:5%;">#</th>
                     <th style="width:80%;">عنوان مقاله</th>
-                    <th style="width:15%;">تنظیمات</th>
+                    <th style="width:5%;">فعال</th>
+                    <th style="width:10%;">تنظیمات</th>
                 </tr>
             </thead>
             <?php $i = 1; ?>
@@ -37,12 +38,19 @@
                     <td>
                         <a href="{{ route('categories.show', ['id' => $category->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $category->name }}</a>
                     </td>
+                    <td class="text-center">
+                        @if($category->active == 1)
+                            <i class="ti-check text-success"></i>
+                        @elseif($category->active == 0)
+                            <i class="ti-close text-danger"></i>
+                        @endif
+                    </td>
                     <td>
                         <form action="{{ route('categories.destroy', ['id' => $category->id]) }}" method="POST">
                             {!! csrf_field() !!}
                             {{ method_field('DELETE') }}
                             <div class="btn-group">
-                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-warning" target="_blank">ویرایش</a>
+                                <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-warning">ویرایش</a>
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('آیا مطمئن هستید؟');">حذف</button>
                             </div>
                         </form>
