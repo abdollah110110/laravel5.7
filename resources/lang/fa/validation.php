@@ -57,7 +57,7 @@ return [
     'image'                => 'The :attribute must be an image.',
     'in'                   => 'The selected :attribute is invalid.',
     'in_array'             => 'The :attribute field does not exist in :other.',
-    'integer'              => 'The :attribute must be an integer.',
+    'integer'              => ':attribute نمیتواند حروف باشد.',
     'ip'                   => 'The :attribute must be a valid IP address.',
     'ipv4'                 => 'The :attribute must be a valid IPv4 address.',
     'ipv6'                 => 'The :attribute must be a valid IPv6 address.',
@@ -109,7 +109,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => ':attribute نمیتواند تکراری باشد - تغییرش بدهید.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
@@ -142,7 +142,10 @@ return [
     */
 
     'attributes' => [
+        'category_id' => 'شماره موضوع',
         'name' => 'نام',
+        'title' => 'عنوان',
+        'body' => 'مطلب',
         'active' => 'فعال شود',
     ],
 
