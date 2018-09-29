@@ -21,6 +21,8 @@
     </head>
     <body>
         
+        @include('includes.navbar')
+        
         <section id="content" class="container-fluid my-3">
             @yield('content')
         </section>
