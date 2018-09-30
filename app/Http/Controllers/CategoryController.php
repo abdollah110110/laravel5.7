@@ -103,10 +103,10 @@ class CategoryController extends Controller
             $save = 1;
         }
         
-        $category->save();
-        
-        if($save == 1)
+        if($save == 1){
+            $category->save();
             session()->flash('success', 'ویرایش با موفقیت انجام شد.');
+        }
         else if($save == 0)
             session()->flash('warning', 'ویرایش انجام نشد - هیچ تغییری وجود نداشت.');
         

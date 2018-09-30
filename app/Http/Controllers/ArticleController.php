@@ -79,7 +79,9 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('articles.edit', compact('article'));
+        $categories = Category::orderBy('id')->get();
+        
+        return view('articles.edit', compact('article', 'categories'));
     }
 
     /**
@@ -92,14 +94,25 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $this->validate($request, [
-            'name' => 'required|min:3',
-            'active' => 'boolean',
+            'category_id' => 'integer',
+            'title' => 'required|max:255|min:3',
+            'body' => 'required'
         ]);
         
         $save = 0;
         
-        if($request->name != $article->name){
-            $article->name = $request->name;
+        if($request->category_id != $article->category_id){
+            $article->category_id = $request->category_id;
+            $save = 1;
+        }
+        
+        if($request->title != $article->title){
+            $article->title = $request->title;
+            $save = 1;
+        }
+        
+        if($request->body != $article->body){
+            $article->body = $request->body;
             $save = 1;
         }
         
@@ -112,14 +125,15 @@ class ArticleController extends Controller
             $save = 1;
         }
         
-        $article->save();
         
-        if($save == 1)
+        if($save == 1){
+            $article->save();
             session()->flash('success', 'ویرایش با موفقیت انجام شد.');
+        }
         else if($save == 0)
             session()->flash('warning', 'ویرایش انجام نشد - هیچ تغییری وجود نداشت.');
         
-        return redirect(route('articles.index'));
+        return redirect(route('articles'));
     }
 
     /**
