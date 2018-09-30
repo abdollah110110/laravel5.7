@@ -36,7 +36,7 @@
                         {{ $i++ }}
                     </td>
                     <td>
-                        <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $article->name }}</a>
+                        <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $article->title }}</a>
                     </td>
                     <td class="text-center">
                         @if($article->active == 1)

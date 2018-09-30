@@ -132,8 +132,8 @@ class ArticleController extends Controller
     {
         $article->delete();
         
-        session()->flash('success', 'موضوع مورد نظر با موفقیت حذف شد.');
+        session()->flash('success', 'مقاله مورد نظر با موفقیت حذف شد.');
         
-        return redirect(route('articles.index'));
+        return redirect(route('articles'));
     }
 }

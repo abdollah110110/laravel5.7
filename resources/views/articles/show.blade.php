@@ -1,21 +1,19 @@
-@extends('layouts.master')
+@extends('layouts.master-show')
 
 
 @section('title')
-- {{ $category->name }}
+- {{ $article->title }}
 @endsection
 
 
 @section('content')
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-        <h2>موضوع: {{ $category->name }}</h2>
-        <a href="{{ route('categories.index') }}" class="btn btn-primary">برگشت به صفحه قبل</a>
+<div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>{{ $article->title }}</h2>
     </div>
-  
     <hr />
     
-    <p>موضوع: {{ $category->name }}</p>
+    <div>{!! $article->body !!}</div>
     
 </div>
 @endsection
