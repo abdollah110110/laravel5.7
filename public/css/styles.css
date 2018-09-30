@@ -3,8 +3,22 @@ html, body{
     font-size: 16px;
 }
 
+pre{
+    direction: ltr;
+    text-align: left;
+    background-color: #eee;
+    padding: 5px;
+}
+
 .min-height-800px{
     min-height: 800px;
+}
+
+/*------------------------------------------------------------------
+              Card styles
+--------------------------------------------------------------------*/
+.card-text{
+    font-size: 14px;
 }
 
 /*------------------------------------------------------------------

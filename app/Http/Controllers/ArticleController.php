@@ -20,6 +20,13 @@ class ArticleController extends Controller
         
         return view('articles.index', compact('articles'));
     }
+    
+    public function selected(Category $category) {
+        
+        $articles = $category->articles()->paginate(10);
+        
+        return view('site.index', compact('articles'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -47,11 +54,15 @@ class ArticleController extends Controller
             'body' => 'required'
         ]);
         
-//        return $request->all();
-        
+        $substr = mb_substr(strip_tags($request->body,''),0,250,"utf-8");
+        $array_substr = explode(' ', $substr);
+        array_pop($array_substr);
+        $substr = implode(' ', $array_substr) . ' ...';
+
         $article = new Article();
         $article->category_id = $request->category_id;
         $article->title = $request->title;
+        $article->abstract = $substr;
         $article->body = $request->body;
         $article->save();
         
@@ -112,6 +123,13 @@ class ArticleController extends Controller
         }
         
         if($request->body != $article->body){
+            
+            $substr = mb_substr(strip_tags($request->body,''),0,250,"utf-8");
+            $array_substr = explode(' ', $substr);
+            array_pop($array_substr);
+            $substr = implode(' ', $array_substr) . ' ...';
+            
+            $article->abstract = $substr;
             $article->body = $request->body;
             $save = 1;
         }

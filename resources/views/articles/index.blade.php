@@ -19,12 +19,12 @@
     
     @if(isset($articles) && count($articles) > 0)
     <div class="table-responsive">
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped table-hover">
             <thead class="text-center bg-light">
                 <tr>
                     <th style="width:5%;">#</th>
-                    <th style="width:75%;">عنوان مقاله</th>
-                    <th style="width:5%;">موضوع</th>
+                    <th style="width:70%;">عنوان مقاله</th>
+                    <th style="width:10%;">موضوع</th>
                     <th style="width:5%;">فعال</th>
                     <th style="width:10%;">تنظیمات</th>
                 </tr>

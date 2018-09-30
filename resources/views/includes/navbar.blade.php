@@ -15,7 +15,7 @@
                 @if(count($categories) > 0)
                     @foreach($categories as $category)
                         <li class="nav-item active">
-                            <a class="nav-link text-primary" href="#">{{ $category->name }}</a>
+                            <a class="nav-link text-primary" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
                         </li>
                     @endforeach
                 @endif

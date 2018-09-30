@@ -1,7 +1,8 @@
 <?php
 
 Route::get('/', function(){
-    return view('site.index');
+    $articles = App\Article::latest()->paginate(10);
+    return view('site.index', compact('articles'));
 })->name('home');
 
 //Categories Routes
@@ -15,6 +16,7 @@ Route::put('categories/{category}/update', 'CategoryController@update')->name('c
 
 //Articles Routes
 Route::get('/articles', 'ArticleController@index')->name('articles');
+Route::get('/articles/category/{category}', 'ArticleController@selected')->name('category.selected');
 Route::get('/articles/create', 'ArticleController@create')->name('articles.create');
 Route::post('/articles/store', 'ArticleController@store')->name('articles.store');
 Route::get('articles/{article}/show', 'ArticleController@show')->name('articles.show');
