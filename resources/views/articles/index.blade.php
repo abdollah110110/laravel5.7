@@ -23,7 +23,8 @@
             <thead class="text-center bg-light">
                 <tr>
                     <th style="width:5%;">#</th>
-                    <th style="width:80%;">عنوان مقاله</th>
+                    <th style="width:75%;">عنوان مقاله</th>
+                    <th style="width:5%;">موضوع</th>
                     <th style="width:5%;">فعال</th>
                     <th style="width:10%;">تنظیمات</th>
                 </tr>
@@ -38,6 +39,7 @@
                     <td>
                         <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $article->title }}</a>
                     </td>
+                    <td>{{ $article->category->name }}</td>
                     <td class="text-center">
                         @if($article->active == 1)
                             <i class="ti-check text-success"></i>
