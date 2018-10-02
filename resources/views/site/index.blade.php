@@ -21,19 +21,22 @@
         <div class="card border-0 bg-light mb-3">
             <div class="card-body">
                 <h4 class="card-title text-center">
-                    <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="text-info" target="_blank">{{ $article->title }}</a>
+                    <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="text-info" target="_blank">{{ $article->title }}</a>
                 </h4>
                 <hr />
-                <div class="card-text">{!! $article->abstract !!}</div>
+                <div class="card-text text-justify">{!! $article->abstract !!}</div>
                 <div class="text-left">
                     <small>
-                        <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="card-link" target="_blank">ادامه مطلب</a>
+                        <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="card-link" target="_blank">ادامه مطلب</a>
                     </small>
                 </div>
             </div>
         </div>
     </div>
     @endforeach
+    <div class="text-center">
+        {{ $articles->render() }}
+    </div>
 </div>
 @else
 <div class="alert alert-warning text-center">

@@ -37,7 +37,7 @@
                         {{ $i++ }}
                     </td>
                     <td>
-                        <a href="{{ route('articles.show', ['id' => $article->id]) }}" class="nav-link p-0 text-info" target="_blank">{{ $article->title }}</a>
+                        <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="nav-link p-0 text-info" target="_blank">{{ $article->title }}</a>
                     </td>
                     <td>{{ $article->category->name }}</td>
                     <td class="text-center">
@@ -48,11 +48,11 @@
                         @endif
                     </td>
                     <td>
-                        <form action="{{ route('articles.destroy', ['id' => $article->id]) }}" method="POST">
+                        <form action="{{ route('articles.destroy', ['slaug' => $article->slug]) }}" method="POST">
                             {!! csrf_field() !!}
                             {{ method_field('DELETE') }}
                             <div class="btn-group">
-                                <a href="{{ route('articles.edit', ['id' => $article->id]) }}" class="btn btn-sm btn-warning">ویرایش</a>
+                                <a href="{{ route('articles.edit', ['slaug' => $article->slug]) }}" class="btn btn-sm btn-warning">ویرایش</a>
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('آیا مطمئن هستید؟');">حذف</button>
                             </div>
                         </form>

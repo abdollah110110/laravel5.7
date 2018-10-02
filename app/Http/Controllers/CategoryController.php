@@ -48,7 +48,7 @@ class CategoryController extends Controller
         
         session()->flash('success', 'موضوع جدید با موفقیت ثبت شد.');
         
-        return redirect(route('categories.index'));
+        return redirect(route('categories'));
     }
 
     /**
@@ -110,7 +110,7 @@ class CategoryController extends Controller
         else if($save == 0)
             session()->flash('warning', 'ویرایش انجام نشد - هیچ تغییری وجود نداشت.');
         
-        return redirect(route('categories.index'));
+        return redirect(route('categories'));
     }
 
     /**
@@ -125,6 +125,6 @@ class CategoryController extends Controller
         
         session()->flash('success', 'موضوع مورد نظر با موفقیت حذف شد.');
         
-        return redirect(route('categories.index'));
+        return redirect(route('categories'));
     }
 }

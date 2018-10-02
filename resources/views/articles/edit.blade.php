@@ -15,7 +15,7 @@
 
     <hr />
 
-    <form action="{{ route('articles.update', ['id' => $article->id]) }}" method="POST" class="form-horizontal bg-light py-5 px-3">
+    <form action="{{ route('articles.update', ['slug' => $article->slug]) }}" method="POST" class="form-horizontal bg-light py-5 px-3">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <div class="form-group row {{ $errors->has('category_id') ? 'has-error' : '' }}">

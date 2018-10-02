@@ -16,6 +16,12 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             
+            $table->unsignedInteger('user_id')->default(1);
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
+            
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')
                     ->references('id')
@@ -23,6 +29,8 @@ class CreateArticlesTable extends Migration
                     ->onDelete('cascade');
             
             $table->string('title');
+            $table->string('slug');
+            $table->text('abstract');
             $table->text('body');
             $table->boolean('active')->default(false);
             
