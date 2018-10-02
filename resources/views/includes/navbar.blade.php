@@ -9,13 +9,21 @@
                 <li class="nav-item active">
                     <a class="nav-link text-primary" href="/">صفحه اصلی</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-primary" href="/categories">موضوعات</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-primary" href="/articles">مقالات</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <?php 
                 $categories = \App\Category::latest()->get();
                 ?>
                 @if(count($categories) > 0)
                     @foreach($categories as $category)
                         <li class="nav-item active">
-                            <a class="nav-link text-primary" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                            <a class="nav-link text-warning" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
                         </li>
                     @endforeach
                 @endif
