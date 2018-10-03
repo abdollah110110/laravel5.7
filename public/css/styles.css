@@ -3,15 +3,51 @@ html, body{
     font-size: 16px;
 }
 
-pre{
+pre {
+    width: 100%;
+    padding: 3px;
+    margin: 0 15px;
     direction: ltr;
     text-align: left;
     background-color: #eee;
-    padding: 5px;
 }
 
 .min-height-800px{
     min-height: 800px;
+}
+
+/*------------------------------------------------------------------
+              Hljs styles
+--------------------------------------------------------------------*/
+.hljs {
+    color: #eee;
+    overflow: auto;
+}
+
+/*------------------------------------------------------------------
+              Abstract styles
+--------------------------------------------------------------------*/
+.abstract{
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/*------------------------------------------------------------------
+              Article styles
+--------------------------------------------------------------------*/
+.article img{
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 0 auto 15px;
+}
+.article h1,h2,h3,h4,h5,h6{
+    margin: 10px 15px 25px auto;
+    font-weight: bold;
+}
+.article p{
+    margin: 10px 15px;
+    font-size: 14px;
 }
 
 /*------------------------------------------------------------------
@@ -38,4 +74,9 @@ pre{
 }
 .has-error .form-control:focus {
     box-shadow: 0 0 3px .2rem rgba(252, 107, 107, 0.3);
+}
+
+
+@media only screen and (max-width: 992px) {
+    //
 }

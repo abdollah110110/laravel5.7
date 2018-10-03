@@ -13,10 +13,17 @@
     </div>
     <hr />
     
-    <div>{!! $article->body !!}</div>
+    <div class="row article">{!! $article->body !!}</div>
     
-    <div class="text-left">
-        <small class="text-muted">{{ $article->create_time }}</small>
+    <div class="clearfix d-flex justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">{{ $article->create_time }}</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">{{ $article->update_time }}</small>
+        </div>
     </div>
     
 </div>

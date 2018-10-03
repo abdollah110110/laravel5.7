@@ -56,15 +56,10 @@ class ArticleController extends Controller
             'body' => 'required'
         ]);
         
-        $substr = mb_substr(strip_tags($request->body,''),0,250,"utf-8");
-        $array_substr = explode(' ', $substr);
-        array_pop($array_substr);
-        $substr = implode(' ', $array_substr) . ' ...';
-
         $article = new Article();
         $article->category_id = $request->category_id;
         $article->title = $request->title;
-        $article->abstract = $substr;
+        $article->abstract = $this->getSubbody($request->body);
         $article->body = $request->body;
         $article->create_time = Jalalian::fromCarbon(Carbon::now());
         $article->save();
@@ -122,17 +117,12 @@ class ArticleController extends Controller
         
         if($request->title != $article->title){
             $article->title = $request->title;
+            $article->slug = str_replace(' ', '-', $request->title);
             $save = 1;
         }
         
         if($request->body != $article->body){
-            
-            $substr = mb_substr(strip_tags($request->body,''),0,250,"utf-8");
-            $array_substr = explode(' ', $substr);
-            array_pop($array_substr);
-            $substr = implode(' ', $array_substr) . ' ...';
-            
-            $article->abstract = $substr;
+            $article->abstract = $this->getSubbody($request->body);
             $article->body = $request->body;
             $save = 1;
         }
@@ -171,5 +161,13 @@ class ArticleController extends Controller
         session()->flash('success', 'مقاله مورد نظر با موفقیت حذف شد.');
         
         return redirect(route('articles'));
+    }
+    
+    private function getSubbody($body) {
+        $tags = '<a><b><strong>';
+        $subbody = mb_substr(strip_tags($body, $tags),0,300,"utf-8");
+        $array_subbody = explode(' ', $subbody);
+        array_pop($array_subbody);
+        return implode(' ', $array_subbody) . ' ...';
     }
 }

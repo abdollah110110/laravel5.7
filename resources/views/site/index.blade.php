@@ -24,7 +24,7 @@
                     <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="text-info" target="_blank">{{ $article->title }}</a>
                 </h4>
                 <hr />
-                <div class="card-text text-justify">{!! $article->abstract !!}</div>
+                <div class="card-text text-justify abstract">{!! $article->abstract !!}</div>
                 <div class="text-left">
                     <small>
                         <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="card-link" target="_blank">ادامه مطلب</a>

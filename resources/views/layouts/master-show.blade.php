@@ -15,7 +15,7 @@
         <link href="/css/vazir.css" rel="stylesheet" type="text/css">
         <link href="/css/styles.css" rel="stylesheet" type="text/css">
         
-        <link href="/ckeditor/plugins/codesnippet/lib/highlight/styles/vs.css" rel="stylesheet"/>
+        <link href="/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css" rel="stylesheet"/>
         <script src="/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
 
     </head>
