@@ -15,5 +15,9 @@
     
     <div>{!! $article->body !!}</div>
     
+    <div class="text-left">
+        <small class="text-muted">{{ $article->create_time }}</small>
+    </div>
+    
 </div>
 @endsection

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Article;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Morilog\Jalali\Jalalian;
 
 class ArticleController extends Controller
 {
@@ -64,6 +66,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->abstract = $substr;
         $article->body = $request->body;
+        $article->create_time = Jalalian::fromCarbon(Carbon::now());
         $article->save();
         
         session()->flash('success', 'مقاله جدید با موفقیت ثبت شد.');
@@ -145,6 +148,7 @@ class ArticleController extends Controller
         
         
         if($save == 1){
+            $article->update_time = Jalalian::fromCarbon(Carbon::now());
             $article->save();
             session()->flash('success', 'ویرایش با موفقیت انجام شد.');
         }

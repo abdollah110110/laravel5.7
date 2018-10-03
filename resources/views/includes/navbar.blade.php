@@ -1,6 +1,6 @@
 <section id="navbar" class="navbar-fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand text-info" href="/"><strong>{{ config('app.name') }}</strong></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <a class="navbar-brand text-light bg-warning px-3" href="/"><strong>{{ config('app.name') }}</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
                 @if(count($categories) > 0)
                     @foreach($categories as $category)
                         <li class="nav-item active">
-                            <a class="nav-link text-warning" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                            <a class="nav-link text-info" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
                         </li>
                     @endforeach
                 @endif
