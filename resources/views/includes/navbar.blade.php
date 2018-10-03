@@ -5,18 +5,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link text-primary" href="/">صفحه اصلی</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-primary" href="/categories">موضوعات</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-primary" href="/articles">مقالات</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
+            <div class="d-flex flex-column flex-lg-row justify-content-between w-100">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-primary" href="/">صفحه اصلی</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-primary" href="/categories">موضوعات</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-primary" href="/articles">مقالات</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
                 <?php 
                 $categories = \App\Category::latest()->get();
                 ?>
@@ -28,6 +29,12 @@
                     @endforeach
                 @endif
             </ul>
+                <div class="btn-group">
+                    <a class="nav-link text-warning" href="#">ثبت نام</a>
+                    <a class="nav-link text-warning" href="#">ورود</a>
+                    <a class="nav-link text-warning" href="#">خروج</a>
+                </div>
+            </div>
         </div>
     </nav>
 </section>
