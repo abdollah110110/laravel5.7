@@ -18,7 +18,7 @@
 <div class="row">
     @foreach($articles as $article)
     <div class="col-lg-6">
-        <div class="card border-0 bg-light mb-3">
+        <div class="card card-box-shadow bg-white border-0 mb-3">
             <div class="card-body">
                 <h4 class="card-title text-center">
                     <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="text-info" target="_blank">{{ $article->title }}</a>

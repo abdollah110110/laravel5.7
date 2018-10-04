@@ -64,6 +64,15 @@ pre {
 .card-text{
     font-size: 14px;
 }
+.card-box-shadow{
+    box-shadow: 0 0 4px 2px green !important;
+}
+.card-box-shadow hr{
+    border-color: #68b468;
+}
+.card-box-shadow a{
+    color: #68b468;
+}
 
 /*------------------------------------------------------------------
               Form-control styles
@@ -86,5 +95,10 @@ pre {
 
 
 @media only screen and (max-width: 992px) {
-    //
+    /*------------------------------------------------------------------
+                  Abstract styles
+    --------------------------------------------------------------------*/
+    .abstract{
+        height: 140px;
+    }   
 }
