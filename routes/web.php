@@ -23,3 +23,6 @@ Route::get('articles/{article}/show', 'ArticleController@show')->name('articles.
 Route::delete('articles/destroy/{article}', 'ArticleController@destroy')->name('articles.destroy');
 Route::get('articles/{article}/edit', 'ArticleController@edit')->name('articles.edit');
 Route::put('articles/{article}/update', 'ArticleController@update')->name('articles.update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
