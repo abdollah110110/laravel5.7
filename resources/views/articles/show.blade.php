@@ -13,7 +13,9 @@
     </div>
     <hr />
     
-    <div class="row article">{!! $article->body !!}</div>
+    <div class="article mt-5">
+        {!! $article->body !!}
+    </div>
     
     <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
         <div class="px-3">

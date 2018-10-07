@@ -29,14 +29,18 @@
                     @endforeach
                 @endif
             </ul>
+                @if(!Auth::check())
                 <div class="btn-group ml-3">
                     <a class="btn btn-success rounded" href="{{route('register')}}">عضویت</a>
                     <a class="btn btn-primary btn-sm rounded" href="{{route('login')}}">ورود</a>
                 </div>
+                @else
                 <form action="{{route('logout')}}" method="POST" class="form-inline">
                     {{ csrf_field() }}
+                    <span class="text-success ml-2">{{ Auth::user()->name }}</span> خوش آمدید
                     <button class="btn btn-danger btn-sm ml-3" type="submit">خروج</button>
                 </form>
+                @endif
             </div>
         </div>
     </nav>

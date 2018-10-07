@@ -1,9 +1,8 @@
 <?php
 
-Route::get('/', function(){
-    $articles = App\Article::latest()->paginate(10);
-    return view('site.index', compact('articles'));
-})->name('home');
+// Home routes
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home/activation/{token}', 'HomeController@activation')->name('activation');
 
 
 //Categories Routes
@@ -37,7 +36,7 @@ Route::group(
         Route::post('/register', 'RegisterController@register')->name('register.post');
 
 
-        // Authentication Routes...
+        // Login-Logout Routes...
         Route::get('/login', 'LoginController@showLoginForm')->name('login');
         Route::post('/login', 'LoginController@login');
         Route::post('/logout', 'LoginController@logout')->name('logout');
@@ -51,4 +50,4 @@ Route::group(
     }
 );
 
-//Route::get('/home', 'HomeController@index')->name('home');
+

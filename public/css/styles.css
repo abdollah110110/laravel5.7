@@ -49,8 +49,8 @@ pre {
     border: 1px solid #eee;
     margin: 0 auto 15px;
 }
-.article h1,h2,h3,h4,h5,h6{
-    margin: 10px 15px 25px auto;
+.article h3{
+    margin: 35px 15px 20px;
     font-weight: bold;
 }
 .article p{
