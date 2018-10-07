@@ -30,7 +30,7 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => ':attribute باید صفر یا یک باشد.',
-    'confirmed'            => 'The :attribute confirmation does not match.',
+    'confirmed'            => ':attribute با تکرارش فرق دارد. هر دو را دوباره وارد کنید.',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -144,9 +144,12 @@ return [
     'attributes' => [
         'category_id' => 'شماره موضوع',
         'name' => 'نام',
+        'email' => 'ایمیل',
         'title' => 'عنوان',
         'body' => 'مطلب',
         'active' => 'فعال شود',
+        'password' => 'رمز عبور',
+        'password_confirmation' => 'تکرار رمز عبور',
     ],
 
 ];

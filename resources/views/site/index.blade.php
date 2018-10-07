@@ -14,6 +14,8 @@
     <a class="btn btn-primary mt-3" href="/articles">ورود به بخش مقالات</a>
 </div>
 
+@include('includes.session-flash')
+
 @if(isset($articles) && count($articles) >0)
 <div class="row">
     @foreach($articles as $article)

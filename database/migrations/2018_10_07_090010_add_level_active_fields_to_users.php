@@ -15,7 +15,7 @@ class AddLevelActiveFieldsToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('level')->after('name')->default('user');
-            $table->boolean('active')->after('remember_token')->default(true);
+            $table->boolean('active')->after('remember_token')->default(false);
         });
     }
 

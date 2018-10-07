@@ -29,11 +29,14 @@
                     @endforeach
                 @endif
             </ul>
-                <div class="btn-group">
-                    <a class="nav-link text-warning" href="#">ثبت نام</a>
-                    <a class="nav-link text-warning" href="#">ورود</a>
-                    <a class="nav-link text-warning" href="#">خروج</a>
+                <div class="btn-group ml-3">
+                    <a class="btn btn-success rounded" href="{{route('register')}}">عضویت</a>
+                    <a class="btn btn-primary btn-sm rounded" href="{{route('login')}}">ورود</a>
                 </div>
+                <form action="{{route('logout')}}" method="POST" class="form-inline">
+                    {{ csrf_field() }}
+                    <button class="btn btn-danger btn-sm ml-3" type="submit">خروج</button>
+                </form>
             </div>
         </div>
     </nav>

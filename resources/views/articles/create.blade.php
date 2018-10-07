@@ -36,7 +36,7 @@
         <div class="form-group row {{ $errors->has('title') ? 'has-error' : '' }}">
             <label for="title" class="col-lg-2 col-form-label text-lg-left">عنوان:</label>
             <div class="col-lg-6">
-                <input class="form-control" type="text" id="title" name="title" placeholder="عنوان را وارد کنید...">
+                <input class="form-control" type="text" id="title" name="title" value="{{ old('title') }}" placeholder="عنوان را وارد کنید...">
             </div>
             <div class="col-lg-4 d-flex align-items-lg-center mt-sm-1">
                 @if($errors->has('title'))
@@ -49,7 +49,7 @@
         <div class="form-group row {{ $errors->has('body') ? 'has-error' : '' }}">
             <label for="body" class="col-lg-2 col-form-label text-lg-left">مطلب:</label>
             <div class="col-lg-10">
-                <textarea class="form-control" id="body" name="body" placeholder="مطلب را وارد کنید..."></textarea>
+                <textarea class="form-control" id="body" name="body" placeholder="مطلب را وارد کنید...">{{ old('email') }}</textarea>
             </div>
             <div class="col-lg-12 d-flex justify-content-center align-items-lg-center mt-sm-1">
                 @if($errors->has('body'))
