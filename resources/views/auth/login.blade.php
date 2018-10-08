@@ -49,7 +49,7 @@
                 @endif
             </div>
             <div class="col-lg-7 d-flex align-items-lg-center mt-sm-1">
-                <a href="#">فراموشی رمز عبور</a>
+                <a href="{{ route('password.request') }}">فراموشی رمز عبور</a>
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4">
