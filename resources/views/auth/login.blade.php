@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-primary">عضویت</button>
+            <button type="submit" class="btn btn-primary">ورود</button>
         </div>
     </form>
 </div>
