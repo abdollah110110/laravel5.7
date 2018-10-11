@@ -1,6 +1,9 @@
 <?php
 
 // Home routes
+Route::get('/slot-view', function(){
+    return view('site.slot-view');
+});
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home/activation/{token}', 'HomeController@activation')->name('activation');
 

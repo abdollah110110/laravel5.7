@@ -41,7 +41,7 @@
             <div class="col-lg-2">&nbsp;</div>
             <div class="col-lg-3 {{ $errors->has('remember') ? 'has-error p-2' : '' }}">
                 <span class="form-inline">
-                    <input type="checkbox" class="form-check ml-2" name="remember" value="1" > مرا به خاطر بسپار
+                    <input type="checkbox" class="form-check ml-2" name="remember" value="1" checked > مرا به خاطر بسپار
                 </span>
                 @if($errors->has('remember'))
                 <br />

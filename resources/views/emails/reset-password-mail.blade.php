@@ -1,21 +1,22 @@
 @component('mail::message')
 
-<div style="direction:rtl;text-align:right">
+@component('mail::panel')
+<h3>سلام {{ $name }} گرامی</h3>
 
-<h1>سلام {{ $name }} گرامی</h1>
+<p>این ایمیل برایتان ارسال شد چون درخواست تغییر رمز داده بودید.</p>
 
-<p>این ایمیل جهت درخواست شما برای تغییر رمز ارسال شده است.</p>
-<p>برای تغییر رمز روی کلید زیر کلیک کنید.</p>
+<p>برای تغییر رمز روی کلید زیر کلیک نمایید:</p>
 
-@component('mail::button', ['url' => $url])
+@component('mail::button', ['url' => $url, 'color' => 'primary'])
 تغییر رمز عبور
 @endcomponent
 
-<p>اگر تمایل به تغییر رمز ندارید هیچ کاری نکنید.</p>
+<p>اگر مایل به تغییر رمز عبور نیستید هیچ کاری نکنید و کلید را کلیک نمایید.</p>
 
-با تشکر<br>
-{{ config('app.name') }}
+<p>متشکریم</p>
 
-</div>
+<a href="{{ config('app.url') }}" target="_blank">{{ config('app.name') }}</a>
+
+@endcomponent
 
 @endcomponent
