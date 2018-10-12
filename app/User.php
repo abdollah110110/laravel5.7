@@ -30,6 +30,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    public function isAdmin()
+    {
+        return $this->level == 'admin' ? true : false;
+    }
+    
     public function activations() {
         return $this->hasMany(Activation::class);
     }

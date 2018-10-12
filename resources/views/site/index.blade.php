@@ -8,10 +8,15 @@
 
 @section('content')
 <div class="jumbotron text-center">
-    <h1 class="mb-5">صفحه اصلی سایت</h1>
-    <p class="mt-5">در این پروژه ایجاد موضوعات و مقالات رو یاد میگیریم:</p>
+    <h1 class="text-success"><b>وب سایت شخصی عبدالله سمعی</b></h1>
+    @if(Auth::check() && Auth::user()->isAdmin())
+    <h3 class="mb-5">سلام <b class="text-success">{{ Auth::user()->name }}</b> گرامی</h3>
+    <p class="mt-5">برای مدیریت سایت میتوانید از لینک های زیر استفاده نمایید:</p>
     <a class="btn btn-info mt-3" href="/categories">ورود به بخش موضوعات</a>
     <a class="btn btn-primary mt-3" href="/articles">ورود به بخش مقالات</a>
+    @else
+    <p class="mt-5">به وب سایت من خوش آمدید</p>
+    @endif
 </div>
 
 @include('includes.session-flash')

@@ -10,25 +10,27 @@
                     <li class="nav-item active">
                         <a class="nav-link text-primary" href="/">صفحه اصلی</a>
                     </li>
+                    <?php 
+                    $categories = \App\Category::latest()->get();
+                    ?>
+                    @if(count($categories) > 0)
+                        @foreach($categories as $category)
+                            <li class="nav-item active">
+                                <a class="nav-link text-primary" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+                @if(Auth::check() && Auth::user()->isAdmin())
+                <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link text-primary" href="/categories">موضوعات</a>
+                        <a class="nav-link text-info" href="/categories">موضوعات</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-primary" href="/articles">مقالات</a>
+                        <a class="nav-link text-info" href="/articles">مقالات</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
-                <?php 
-                $categories = \App\Category::latest()->get();
-                ?>
-                @if(count($categories) > 0)
-                    @foreach($categories as $category)
-                        <li class="nav-item active">
-                            <a class="nav-link text-info" href="{{ route('category.selected', ['id' => $category->id]) }}">{{ $category->name }}</a>
-                        </li>
-                    @endforeach
                 @endif
-            </ul>
                 @if(!Auth::check())
                 <div class="btn-group ml-3">
                     <a class="btn btn-success rounded" href="{{route('register')}}">عضویت</a>
