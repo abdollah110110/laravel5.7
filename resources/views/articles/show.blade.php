@@ -2,7 +2,7 @@
 
 
 @section('title')
-- {{ $article->title }}
+{{ $article->title }}
 @endsection
 
 
