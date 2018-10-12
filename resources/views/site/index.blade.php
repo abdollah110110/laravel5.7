@@ -23,9 +23,8 @@
         <div class="card card-box-shadow bg-white border-0 mb-3">
             <div class="card-body">
                 <h4 class="card-title text-center">
-                    <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" class="text-info" target="_blank">{{ $article->title }}</a>
+                    <a href="{{ route('articles.show', ['slaug' => $article->slug]) }}" target="_blank">{{ $article->title }}</a>
                 </h4>
-                <hr />
                 <div class="card-text text-justify abstract">{!! $article->abstract !!}</div>
                 <div class="text-left">
                     <small>
