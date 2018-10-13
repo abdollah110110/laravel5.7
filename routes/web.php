@@ -23,6 +23,12 @@ Route::group(
         Route::delete('/articles/destroy/{article}', 'ArticleController@destroy')->name('articles.destroy');
         Route::get('/articles/{article}/edit', 'ArticleController@edit')->name('articles.edit');
         Route::put('/articles/{article}/update', 'ArticleController@update')->name('articles.update');
+        
+        //Users Routes
+        Route::get('/users', 'UserController@index')->name('users');
+        Route::delete('/users/destroy/{user}', 'UserController@destroy')->name('users.destroy');
+        Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+        Route::put('/users/{user}/update', 'UserController@update')->name('users.update');
     }
 );
 

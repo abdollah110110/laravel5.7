@@ -29,6 +29,9 @@
                     <li class="nav-item active">
                         <a class="nav-link text-info" href="/articles">مقالات</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-info" href="/users">کاربران</a>
+                    </li>
                 </ul>
                 @endif
                 @if(!Auth::check())

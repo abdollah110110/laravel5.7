@@ -14,6 +14,7 @@
     <p class="mt-5">برای مدیریت سایت میتوانید از لینک های زیر استفاده نمایید:</p>
     <a class="btn btn-info mt-3" href="/categories">ورود به بخش موضوعات</a>
     <a class="btn btn-primary mt-3" href="/articles">ورود به بخش مقالات</a>
+    <a class="btn btn-warning mt-3" href="/users">ورود به بخش کاربران</a>
     @else
     <p class="mt-5">به وب سایت من خوش آمدید</p>
     @endif
