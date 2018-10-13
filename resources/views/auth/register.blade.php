@@ -6,10 +6,10 @@
 
 @section('content')
 <div class="container">
-    <div class="mb-0 mt-4">
+    <div class="mb-0 mt-4 py-4">
         <h2>عضویت در سایت</h2>
     </div>
-    <hr />
+
     <form action="{{ route('register.post') }}" method="POST" class="form-horizontal bg-light py-5 px-3">
         {{ csrf_field() }}
         <div class="form-group row {{ $errors->has('name') ? 'has-error' : '' }}">

@@ -6,10 +6,9 @@
 
 @section('content')
 <div class="container">
-    <div class="mb-0 mt-4">
+    <div class="mb-0 mt-4 py-4">
         <h2>ورود به سایت</h2>
     </div>
-    <hr />
     
     @include('includes.session-flash')
     
@@ -49,7 +48,7 @@
                 @endif
             </div>
             <div class="col-lg-7 d-flex align-items-lg-center mt-sm-1">
-                <a href="{{ route('password.request') }}">فراموشی رمز عبور</a>
+                <a href="{{ route('password.request') }}">رمز عبورم را فراموش کرده ام</a>
             </div>
         </div>
         <div class="d-flex justify-content-center mt-4">

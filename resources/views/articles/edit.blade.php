@@ -8,12 +8,10 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center py-4">
         <h2>ویرایش: <small class="text-warning">{{ $article->title }}</small></h2>
         <a href="{{ route('articles') }}" class="btn btn-primary">برگشت به صفحه قبل</a>
     </div>
-
-    <hr />
 
     <form action="{{ route('articles.update', ['slug' => $article->slug]) }}" method="POST" class="form-horizontal bg-light py-5 px-3">
         {{ csrf_field() }}

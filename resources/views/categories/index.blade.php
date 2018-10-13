@@ -8,12 +8,10 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center py-4">
         <h2>موضوعات</h2>
         <a href="{{ route('categories.create') }}" class="btn btn-success">ایجاد موضوع جدید</a>
     </div>
-  
-    <hr />
     
     @include('includes.session-flash')
     

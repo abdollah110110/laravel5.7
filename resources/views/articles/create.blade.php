@@ -8,13 +8,11 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center py-4">
         <h2>ایجاد مقاله جدید</h2>
         <a href="{{ route('articles') }}" class="btn btn-primary">برگشت به صفحه قبل</a>
     </div>
   
-    <hr />
-    
     @if(isset($categories) && count($categories) >0)
     <form action="{{ route('articles.store') }}" method="POST" class="form-horizontal bg-light py-5 px-3">
         {{ csrf_field() }}

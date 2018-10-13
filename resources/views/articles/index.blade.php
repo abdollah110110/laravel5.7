@@ -8,13 +8,11 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center py-4">
         <h2>مقالات</h2>
         <a href="{{ route('articles.create') }}" class="btn btn-success">ایجاد مقاله جدید</a>
     </div>
   
-    <hr />
-    
     @include('includes.session-flash')
     
     @if(isset($articles) && count($articles) > 0)

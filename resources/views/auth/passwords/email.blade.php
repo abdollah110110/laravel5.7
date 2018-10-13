@@ -6,10 +6,9 @@
 
 @section('content')
 <div class="container">
-    <div class="mb-0 mt-4">
+    <div class="mb-0 mt-4 py-4">
         <h2>دریافت ایمیل</h2>
     </div>
-    <hr />
     
     @include('includes.session-flash')
     
