@@ -7,8 +7,9 @@ use App\Article;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Morilog\Jalali\Jalalian;
+use App\Http\Controllers\ParentController;
 
-class ArticleController extends Controller
+class ArticleController extends ParentController
 {
     /**
      * Display a listing of the resource.
@@ -64,8 +65,8 @@ class ArticleController extends Controller
         $article->create_time = Jalalian::fromCarbon(Carbon::now());
         $article->save();
         
-        session()->flash('success', 'مقاله جدید با موفقیت ثبت شد.');
-        
+        $this->flashAlert('ایجاد مقاله با موفقیت انجام شد.');
+
         return redirect(route('articles'));
     }
 
@@ -140,10 +141,10 @@ class ArticleController extends Controller
         if($save == 1){
             $article->update_time = Jalalian::fromCarbon(Carbon::now());
             $article->save();
-            session()->flash('success', 'ویرایش با موفقیت انجام شد.');
+            $this->flashAlert();
         }
         else if($save == 0)
-            session()->flash('warning', 'ویرایش انجام نشد - هیچ تغییری وجود نداشت.');
+            $this->flashAlert('ویرایش مقاله انجام نشد.', 'danger');
         
         return redirect(route('articles'));
     }
@@ -158,8 +159,8 @@ class ArticleController extends Controller
     {
         $article->delete();
         
-        session()->flash('success', 'مقاله مورد نظر با موفقیت حذف شد.');
-        
+        $this->flashAlert('حذف مقاله با موفقیت انجام شد.', 'info');
+
         return redirect(route('articles'));
     }
     

@@ -34,5 +34,10 @@
         <script src='/ckeditor/ckfinder/ckfinder.js'></script>
         <script src='/ckeditor/config.js'></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+        </script>
     </body>
 </html>
