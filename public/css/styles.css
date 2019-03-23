@@ -2,3 +2,94 @@ html, body{
     font-family: vazir;
     font-size: 16px;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: #fcf906;
+}
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #c0fed8;
+}
+
+.bg-success {
+    background-color: #44bd32 !important;
+}
+
+.form-inline{
+	position: relative;
+	width: 70%;
+	margin: 10px  auto;
+}
+.form-control{
+	background-color: #f9fcee;
+	border: 0;
+	border-left: 0;
+	border-radius: 0;
+	transition: none;
+	border: 1px solid transparent;
+	padding-left: 11%;
+	width: 100% !important;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ffc107;
+    outline: 0;
+    box-shadow: none !important;
+}
+.btn-warning{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid #ffc107;
+	border-right: 0;
+	border-radius: 0;
+}
+
+.dropdown-menu{
+	left: -45px;
+	border: 0;
+	border-radius: 0;
+	margin: 8px 0 0;
+	padding: 1px;
+	text-align: right;
+	background-color: #4cd137;
+}
+
+
+@media  (max-width: 1140px) {
+}
+
+@media  (max-width: 960px) {
+	.form-inline{
+		position: relative;
+		width: 90%;
+		margin: 10px  auto;
+	}
+}
+
+@media  (max-width: 720px) {
+}
+
+@media  (max-width: 540px) {
+}
+
+@media  (max-width: 250px) {
+	.form-inline {
+		display: block;
+		height: 79px;
+		padding: 3px;
+		width: 98%;
+	}
+	.btn-warning{
+		top: 45px;
+		left: 33%;
+		border-radius: 4px;
+	}
+}
