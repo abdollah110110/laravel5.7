@@ -103,6 +103,149 @@
 			</div>
 		</div>
 
+		<div id="products" class="container-fluid py-5">
+			<h2>محصولات  <i class="ti-hand-point-down"></i></h2>
+			<div class="row">
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3 product-cover">
+						<div class="card">
+							<img src="/images/baner.jpg"  alt="product picture">
+							<div class="card-body">
+								<h4 class="card-title">نام محصول</h4>
+								<p class="card-text">خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول خلاصه ای از معرفی محصول  ...</p>
+								<h3 class="card-price">
+									<span class="text-success">60000</span>
+									<span class="text-danger small">تومان</span>
+								</h3>
+								<div class="d-flex flex-wrap justify-content-between">
+									<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
+									<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+
         @yield('content')
 
         <script src="/js/jquery.js"></script>
