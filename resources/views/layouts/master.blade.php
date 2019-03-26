@@ -19,15 +19,15 @@
     <body>
 
 		<nav class="navbar navbar-expand-md navbar-dark bg-success">
-			<a class="navbar-brand" href="#">شاین</a>
+			<a class="navbar-brand" href="/">{{ config('app.name') }}</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#">صفحه اصلی</a>
+						<a class="nav-link" href="/">صفحه اصلی</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">گیاهان دارویی</a>
@@ -48,13 +48,13 @@
 							<a class="dropdown-item" href="#">صنایع دستی</a>
 						</div>
 					</li>
-<!--					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li>-->
+					<!--					<li class="nav-item">
+											<a class="nav-link disabled" href="#">Disabled</a>
+										</li>-->
 				</ul>
 			</div>
 		</nav>
-		
+
 		<div class="container">
 			<div class="row">
 				<form class="form-inline">
@@ -64,10 +64,50 @@
 			</div>
 		</div>
 
+		<div id="slider" class="container-fluid">
+			<div class="row">
+				<!-- The carousel -->
+				<div id="myCarousel" class="carousel slide">
+					<!-- Indicators -->
+					<ul class="carousel-indicators">
+						<li class="item1 active"></li>
+						<li class="item2"></li>
+						<li class="item3"></li>
+					</ul>
+					<!-- The slideshow -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<a href="#">
+								<img src="holder.js/1500x400?bg=770000" class="w-100" alt="slide1">
+							</a>
+						</div>
+						<div class="carousel-item">
+							<a href="#">
+								<img src="holder.js/1500x400?bg=007700" class="w-100" alt="slide1">
+							</a>
+						</div>
+						<div class="carousel-item">
+							<a href="#">
+								<img src="holder.js/1500x400?bg=000077" class="w-100" alt="slide1">
+							</a>
+						</div>
+					</div>
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#myCarousel">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+
         @yield('content')
 
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/holder.js"></script>
         <script src="/js/scripts.js"></script>
     </body>
 </html>
