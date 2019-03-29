@@ -68,7 +68,7 @@ html, body{
 }
 
 #slider{
-	background-color: #ff3366; 
+	background-color: #6ab04c; 
 }
 
 #products{
@@ -85,15 +85,16 @@ html, body{
 }
 #products .product-cover{
 	overflow: hidden;
-	padding: 0 1px 11px;
+	padding: 0 3px 5px 2px;
 	background-color: #fcf9f3;
-	margin-bottom: 2px;
+	background-color: transparent;
 }
 #products .product-cover .card{
 	border: none;
 	transition: all .3s ease;
 	transform: scale(1);
-	background-color: transparent;
+	padding-bottom: 5px;
+	background-color: #f6f9ea;
 }
 #products .product-cover .card img{
 	height: 200px;
@@ -102,28 +103,41 @@ html, body{
 	padding: 0.5rem 1.25rem;
 }
 #products .product-cover .card .card-body .card-title{
-	font-size: 22px;
-	margin-bottom: 8px;
+	font-size: 18px;
+	color: #006266;
+	text-decoration: none;
+}
+#products .product-cover .card .card-body .card-title:hover{
+	color: #FFC312;
 }
 #products .product-cover .card .card-body .card-text{
-	font-size: 14px;
+	font-size: 12px;
 	text-align: justify;
+	margin: 4px 0 6px;
 }
 #products .product-cover .card .card-body .card-price{
 	font-size: 25px;
 	text-align: center;
-	margin: 25px 0;
+	margin: 12px 0;
 }
 #products .product-cover:hover .card{
 	transform: scale(1.05);
-	background-color: #e8ffe8;
+	background-color: #F8EFBA;
 }
 
 
-@media  (max-width: 1140px) {
+@media  (max-width: 1201px) {
+	#products .product-cover .card .card-body .d-flex .btn{
+		width: 100%;
+		margin-bottom: 5px;
+		padding: 8px;
+	}
+	#products .product-cover .card img{
+		height: 165px;
+	}
 }
 
-@media  (max-width: 960px) {
+@media  (max-width: 991px) {
 	.form-inline{
 		position: relative;
 		width: 90%;
@@ -132,22 +146,24 @@ html, body{
 	#products h2 {
 		font-size: 35px;
 	}
-}
-
-@media  (max-width: 720px) {
-}
-
-@media  (max-width: 540px) {
 	#products .product-cover .card img{
-		height: 350px;
-	}
-	#products .product-cover .card .card-body .d-flex .btn{
-		width: 100%;
-		margin-bottom: 10px;
+		height: 240px;
 	}
 }
 
-@media  (max-width: 250px) {
+@media  (max-width: 769px) {
+	#products .product-cover .card img{
+		height: 182px;
+	}
+}
+
+@media  (max-width: 577px) {
+	#products .product-cover .card img{
+		height: 340px;
+	}
+}
+
+@media  (max-width: 251px) {
 	.form-inline {
 		display: block;
 		height: 79px;
@@ -158,5 +174,8 @@ html, body{
 		top: 45px;
 		left: 33%;
 		border-radius: 4px;
+	}
+	#products .product-cover .card img{
+		height: 170px;
 	}
 }
