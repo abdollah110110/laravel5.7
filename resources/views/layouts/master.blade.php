@@ -103,7 +103,7 @@
 			</div>
 		</div>
 
-		<div id="products" class="container-fluid py-5">
+		<div class="products container-fluid py-5 bg-white">
 			<h2>محصولات  <i class="ti-hand-point-down"></i></h2>
 			<div class="container">
 				<div class="row">
@@ -240,6 +240,110 @@
 										<a href="#" class="btn btn-primary btn-sm">توضیحات بیشتر</a>
 										<a href="#" class="btn btn-success btn-sm">افزودن به سبد</a>
 									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="products container-fluid py-5 bg-light">
+			<h2>محصولات پیشنهادی  <i class="ti-hand-point-down"></i></h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-6 col-sm-4 col-md-3 col-lg-2 product-cover">
+							<div class="card proposal">
+								<a href="#">
+									<img src="/images/baner.jpg" class="w-100"  alt="product picture">
+								</a>
+								<div class="card-body">
+									<a href="#" class="card-title">نام محصول</a>
+									<h5 class="card-price">
+										<span class="text-success">60000</span>
+										<span class="small">تومان</span>
+									</h5>
+									<a href="#" class="btn btn-primary btn-sm btn-block">توضیحات</a>
+									<a href="#" class="btn btn-success btn-sm btn-block">افزودن به سبد</a>
 								</div>
 							</div>
 					</div>
