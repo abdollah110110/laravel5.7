@@ -3,6 +3,16 @@ html, body{
     font-size: 16px;
 }
 
+a{
+	color: #888;
+	text-decoration: none;
+}
+a:hover,
+a:focus{
+	color: #aca;
+	text-decoration: none;
+}
+
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
@@ -133,6 +143,25 @@ html, body{
 }
 .proposal .card-price{
 	font-size: 20px !important;
+}
+
+#footer{
+	color: #ddd;
+}
+#footer .form-control{
+	background-color: #ccc;
+}
+#footer .form-control:focus{
+	background-color: #fff;
+}
+#footer #telegram{
+	width: 80%;
+	margin-bottom: 20px;
+}
+#footer .end{
+	margin-top: 30px;
+	padding-top: 15px;
+	border-top: 2px solid #888;
 }
 
 
