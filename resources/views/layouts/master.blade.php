@@ -416,6 +416,7 @@
 					</div>
 				</div>
 				<div class="row justify-content-center end">
+					<i class="ti-arrow-circle-up" id="Scroll_to_top" title="برو ابتدای صفحه"></i>
 					<p>&COPY; تمامی حقوق این سایت متعلق به <a href="/">{{ config('app.name') }}</a> می باشد.</p>
 				</div>
 			</div>

@@ -164,6 +164,19 @@ a:focus{
 	border-top: 2px solid #888;
 }
 
+#Scroll_to_top { 
+display:none;
+position:fixed;
+bottom:38px;
+right:20px;
+color: #44bd32;
+font-size: 50px;
+}
+
+#Scroll_to_top:hover {
+	color: #6ef954;
+}
+
 
 @media  (max-width: 1201px) {
 	.products .product-cover .card .card-body .d-flex .btn{
