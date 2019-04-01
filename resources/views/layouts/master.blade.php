@@ -18,7 +18,7 @@
     </head>
     <body>
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-success">
 			<a class="navbar-brand" href="/">{{ config('app.name') }}</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -55,12 +55,23 @@
 			</div>
 		</nav>
 
-		<div class="container">
+		<div class="container-fluid bg-white">
 			<div class="row">
-				<form class="form-inline">
-					<input class="form-control" type="search" placeholder="جستجو کنید..." aria-label="جستجو">
-					<button class="btn btn-warning rounded-left" type="submit">جستجو</button>
-				</form>
+				<div class="col-md-4 col-lg-2 d-flex justify-content-center  justify-content-lg-start align-items-center">
+					<img src="/images/logo.png" class="img-thumbnail p-0 border-0" >
+				</div>
+				<div class="col-md-4 col-lg-7 d-flex justify-content-center align-items-center">
+					<form class="form-inline">
+						<input class="form-control" type="search" placeholder="جستجو کنید..." aria-label="جستجو">
+						<button class="btn btn-warning rounded-left" type="submit">جستجو</button>
+					</form>
+				</div>
+				<div class="col-md-4 col-lg-3 d-flex justify-content-center  justify-content-lg-start align-items-center">
+					<div id="basket" class="w-100 text-center">
+						<a href="#">مشاهده سبد خرید</a>
+						<span class="badge-pill">5</span>
+					</div>
+				</div>
 			</div>
 		</div>
 

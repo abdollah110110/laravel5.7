@@ -1,6 +1,11 @@
 html, body{
     font-family: vazir;
     font-size: 16px;
+	padding-top: 28px;
+}
+
+.btn{
+	border-radius: 30px !important;
 }
 
 a{
@@ -9,10 +14,13 @@ a{
 }
 a:hover,
 a:focus{
-	color: #aca;
+	color: #4cd137;
 	text-decoration: none;
 }
-
+.navbar{
+	padding: 8px;
+	transition: all .3s ease;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
@@ -38,18 +46,16 @@ a:focus{
 
 .form-inline{
 	position: relative;
-	width: 70%;
-	margin: 10px  auto;
+	width: 94%;
 }
 .form-control{
-	background-color: #6ef954;
-	border: 0;
+	background-color: #cad4cc;
 	border-left: 0;
-	border-radius: 0;
+	border-radius: 30px;
 	transition: none;
-	border: 1px solid transparent;
-	padding-left: 11%;
-	width: 100% !important;
+	border: 1px solid #cad4cc;
+	padding: 5px 15px 7px 100px;
+	width: 98% !important;
 }
 .form-control:focus {
     color: #495057;
@@ -63,8 +69,7 @@ a:focus{
 	top: 0;
 	left: 0;
 	border: 1px solid #ffc107;
-	border-right: 0;
-	border-radius: 0;
+	padding: 6px 30px;
 }
 
 .dropdown-menu{
@@ -75,6 +80,18 @@ a:focus{
 	padding: 1px;
 	text-align: right;
 	background-color: #4cd137;
+}
+
+#basket{
+	border: 2px solid #888;
+	padding: 15px 8px 11px;
+}
+#basket .badge-pill {
+    border-radius: 14px;
+    padding: 5px 22px 0px;
+    background-color: #cad4cc;
+    width: 56px !important;
+    height: 30px !important;
 }
 
 #slider{
@@ -154,6 +171,9 @@ a:focus{
 #footer .form-control:focus{
 	background-color: #fff;
 }
+#footer .btn-secondary{
+	padding: 8px 50px;
+}
 #footer #telegram{
 	width: 80%;
 	margin-bottom: 20px;
@@ -193,10 +213,8 @@ font-size: 50px;
 }
 
 @media  (max-width: 991px) {
-	.form-inline{
-		position: relative;
-		width: 90%;
-		margin: 10px  auto;
+	#basket{
+		text-align: center;
 	}
 	.products h2 {
 		font-size: 35px;
@@ -210,6 +228,16 @@ font-size: 50px;
 }
 
 @media  (max-width: 769px) {
+	.form-inline{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#basket{
+		margin-bottom: 10px;
+	}
+	#basket .badge-pill {
+		top: 2px;
+	}
 	.products .product-cover .card img{
 		height: 182px;
 	}
@@ -234,12 +262,6 @@ font-size: 50px;
 }
 
 @media  (max-width: 251px) {
-	.form-inline {
-		display: block;
-		height: 79px;
-		padding: 3px;
-		width: 98%;
-	}
 	.btn-warning{
 		top: 45px;
 		left: 33%;
