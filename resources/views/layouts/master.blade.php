@@ -48,9 +48,9 @@
 							<a class="dropdown-item" href="#">صنایع دستی</a>
 						</div>
 					</li>
-					<!--					<li class="nav-item">
-											<a class="nav-link disabled" href="#">Disabled</a>
-										</li>-->
+					<li class="nav-item">
+						<a id="contact" class="nav-link" href="#contact_us">تماس با ما</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -395,9 +395,11 @@
 		</div>
 
 		<div id="footer" class="container-fluid pt-5 bg-dark text-center">
-			<h2>تماس با ما</h2>
-			<p class="mt-3">اگر شما سوالی دارید میتوانید از طریق روشهای زیر سوالتان را بپرسید.</p>
-			<p>سعی میکنیم در اولین فرصت جواب دهیم.</p>
+			<div  id="contact_us" class="row flex-column">
+				<h2>تماس با ما</h2>
+				<p>اگر شما سوالی دارید میتوانید از طریق روشهای زیر سوالتان را بپرسید.</p>
+				<p>سعی میکنیم در اولین فرصت جواب دهیم.</p>
+			</div>
 			<div class="container mt-5">
 				<div class="row">
 					<div class="col-md-4">
@@ -420,7 +422,7 @@
 						</div>
 					</div>
 					<div class="col-md-8 px-5 text-right">
-						<form id="contact-form" name="contact-form" action="mail.php" method="POST">
+						<form id="contact_form" name="contact-form" action="mail.php" method="POST">
 							<div class="row">
 								<div class="col-md-6">
 									<div class=" mb-0">
@@ -448,7 +450,7 @@
 								<div class="col-md-12">
 									<div class="">
 										<label for="message">متن پیام</label>
-										<textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+										<textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea" style="resize:none;"></textarea>
 									</div>
 								</div>
 							</div>
