@@ -19,13 +19,12 @@
     <body>
 
 		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-success">
-			<a class="navbar-brand" href="/">{{ config('app.name') }}</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
+				<ul class="navbar-nav ml-auto p-lg-0">
 					<li class="nav-item active">
 						<a class="nav-link" href="/">صفحه اصلی</a>
 					</li>
@@ -58,7 +57,7 @@
 		<div class="container-fluid bg-white">
 			<div class="row">
 				<div class="col-md-4 col-lg-2 d-flex justify-content-center  justify-content-lg-start align-items-center">
-					<img src="/images/logo.png" class="img-thumbnail p-0 border-0" >
+					<img src="/images/logo.png" class="img-thumbnail p-0 border-0" alt="{{ config('app.name') }}" >
 				</div>
 				<div class="col-md-4 col-lg-7 d-flex justify-content-center align-items-center">
 					<form class="form-inline">
