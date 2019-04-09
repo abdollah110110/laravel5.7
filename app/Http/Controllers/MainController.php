@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\page;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -44,9 +43,9 @@ class MainController extends Controller
      * @param  \App\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(page $page)
+    public function show()
     {
-        //
+	return view('main.show');
     }
 
     /**
