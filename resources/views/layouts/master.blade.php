@@ -18,6 +18,8 @@
     </head>
     <body>
 
+		@yield('breadcrumb')
+
 		@yield('content')
 
 		@yield('proposal-products')

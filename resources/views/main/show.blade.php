@@ -9,6 +9,15 @@
 @include('includes.logo-search-basket')
 
 
+@section('breadcrumb')
+ <ul class="breadcrumb">
+  <li><a href="/">صفحه اصلی</a></li>
+  <li><a href="#">نام دسته بندی</a></li>
+  <li>چای کوهی</li>
+</ul> 
+@endsection
+
+
 @section('content')
 <div class="container-fluid py-5 bg-white text-center">
 	<h2>نام محصول </h2>
