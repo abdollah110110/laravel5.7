@@ -23,15 +23,17 @@ $('.dropdown').on('hide.bs.dropdown', function () {
 // Scroll to top
 $(document).ready(function ($) {
 	$(window).scroll(function () {
-		if ($(this).scrollTop() < 200) {
+		if ($(this).scrollTop() < 150) {
 			$('#Scroll_to_top').fadeOut();
 			$('.navbar').removeClass('py-0');
 			$('.dropdown-menu').removeClass('mt-0');
+			$('#basket').removeClass('top-basket');
 		} 
 		else {
 			$('#Scroll_to_top').fadeIn();
 			$('.navbar').addClass('py-0');
 			$('.dropdown-menu').addClass('mt-0');
+			$('#basket').addClass('top-basket');
 		}
 	});
 	$('#Scroll_to_top').on('click', function () {

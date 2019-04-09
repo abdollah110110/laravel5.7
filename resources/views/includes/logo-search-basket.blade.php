@@ -11,6 +11,7 @@
 		</div>
 		<div class="col-md-4 col-lg-3 d-flex justify-content-center  justify-content-lg-start align-items-center">
 			<div id="basket" class="w-100 text-center">
+				<i class="ti-shopping-cart"></i>
 				<a href="#">مشاهده سبد خرید</a>
 				<span class="badge-pill">5</span>
 			</div>
