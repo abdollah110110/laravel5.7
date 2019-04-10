@@ -31,5 +31,24 @@
 				<a id="contact" class="nav-link" href="#contact_us">تماس با ما</a>
 			</li>
 		</ul>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a href="{{ route('register') }}" class="text-light">عضویت</a>
+			</li>
+			<li class="nav-item">
+				<span class="mx-2">/</span>
+			</li>
+			<li class="nav-item">
+				<a href="" class="text-light">ورود</a>
+			</li>
+			<li class="nav-item">
+				@if (session('status'))
+				<div class="alert alert-success" role="alert">
+					{{ session('status') }}
+				</div>
+				@endif
+				<div>کاربر گرامی <span class="text-warning">علی</span>، خوش آمدید</div>
+			</li>
+		</ul>
 	</div>
 </nav>

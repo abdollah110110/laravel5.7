@@ -11,7 +11,7 @@
 @include('includes.slider')
 
 
-@section('products')
+@section('content')
 <div class="products container-fluid py-5 bg-white">
 	<h2>محصولات  <i class="ti-hand-point-down"></i></h2>
 	<div class="container">
