@@ -21,24 +21,31 @@
 <div class="container-fluid py-5 bg-white">
 	<h2>عضویت در سایت</h2>
 	<div class="container mt-5 text-center">
+		<p class="bg-info text-white p-2 mb-5">موارد مشخص شده با <span class="text-danger px-1">*</span>الزامی می باشند</p>
 		<div class="row">
 			<form action="{{ route('register.post') }}" method="POST" class="form-horizontal w-100">
 				{{ csrf_field() }}
 				<div class="form-group row {{ $errors->has('first_name') ? 'has-error text-danger' : '' }}">
-					<label for="first_name" class="col-lg-2 col-form-label text-right text-lg-left">نام:</label>
-					<div class="col-lg-3">
+					<label for="first_name" class="col-lg-2 col-form-label text-right text-lg-left">
+						<span class="text-danger pl-1">*</span>
+						<span>نام:</span>
+					</label>
+					<div class="col-lg-4">
 						<input class="form-control" type="text" name="first_name" value="{{ old('first_name') }}" placeholder="نام را وارد کنید...">
 					</div>
-					<div class="col-lg-7 d-flex align-items-lg-center mt-sm-1">
+					<div class="col-lg-6 d-flex align-items-lg-center mt-sm-1">
 						@if($errors->has('first_name'))
 						<small>{{ $errors->first('first_name') }}</small>
 						@else
-						<small class="text-info">فقط حروف فارسی قابل قبول است</small>
+						<small class="text-info">کمتر از سه حرف نباشد | فقط حروف فارسی قابل قبول است</small>
 						@endif
 					</div>
 				</div>
 				<div class="form-group row {{ $errors->has('last_name') ? 'has-error text-danger' : '' }}">
-					<label for="last_name" class="col-lg-2 col-form-label text-right text-lg-left">نام خانوادگی:</label>
+					<label for="last_name" class="col-lg-2 col-form-label text-right text-lg-left">
+						<span class="text-danger pl-1">*</span>
+						<span>نام خانوادگی:</span>
+					</label>
 					<div class="col-lg-4">
 						<input class="form-control" type="text" name="last_name" value="{{ old('last_name') }}" placeholder="نام خانوادگی را وارد کنید...">
 					</div>
@@ -46,7 +53,7 @@
 						@if($errors->has('last_name'))
 						<small>{{ $errors->first('last_name') }}</small>
 						@else
-						<small class="text-info">فقط حروف فارسی قابل قبول است</small>
+						<small class="text-info">کمتر از سه حرف نباشد | فقط حروف فارسی قابل قبول است</small>
 						@endif
 					</div>
 				</div>
@@ -65,10 +72,10 @@
 				</div>
 				<div class="form-group row {{ $errors->has('password') ? 'has-error text-danger' : '' }}">
 					<label for="password" class="col-lg-2 col-form-label text-right text-lg-left">رمز عبور:</label>
-					<div class="col-lg-6">
+					<div class="col-lg-5">
 						<input class="form-control" type="password" name="password" placeholder="رمز عبور را وارد کنید...">
 					</div>
-					<div class="col-lg-4 d-flex align-items-lg-center mt-sm-1">
+					<div class="col-lg-5 d-flex align-items-lg-center mt-sm-1">
 						@if($errors->has('password'))
 						<small>{{ $errors->first('password') }}</small>
 						@else
@@ -78,15 +85,33 @@
 				</div>
 				<div class="form-group row">
 					<label for="password_confirmation" class="col-lg-2 col-form-label text-right text-lg-left">تکرار رمز عبور:</label>
-					<div class="col-lg-6">
+					<div class="col-lg-5">
 						<input class="form-control" type="password" name="password_confirmation" placeholder="تکرار رمز عبور را وارد کنید...">
 					</div>
-					<div class="col-lg-4 d-flex align-items-lg-center mt-sm-1">
+					<div class="col-lg-5 d-flex align-items-lg-center mt-sm-1">
 						<small class="text-info">باید بیشتر از 6 حرف باشد و دقیقاً حرفهای رمز عبور را داشته باشد.</small>
 					</div>
 				</div>
+				<div class="form-group row {{ $errors->has('mobile') ? 'has-error text-danger' : '' }}">
+					<label for="mobile" class="col-lg-2 col-form-label text-right text-lg-left">
+						<span class="text-danger pl-1">*</span>
+						<span>موبایل:</span>
+					</label>
+					<div class="col-lg-4">
+						<input class="form-control" type="text" name="mobile" value="{{ old('mobile') }}" placeholder="شماره موبایل را وارد کنید...">
+					</div>
+					<div class="col-lg-6 d-flex align-items-lg-center mt-sm-1">
+						@if($errors->has('mobile'))
+						<small>{{ $errors->first('mobile') }}</small>
+						@else
+						<small class="text-info">فقط اعداد قابل قبول است</small>
+						@endif
+					</div>
+				</div>
 				<div class="form-group row {{ $errors->has('phone') ? 'has-error text-danger' : '' }}">
-					<label for="phone" class="col-lg-2 col-form-label text-right text-lg-left">شماره تلفن:</label>
+					<label for="phone" class="col-lg-2 col-form-label text-right text-lg-left">
+						<span>تلفن ثابت:</span>
+					</label>
 					<div class="col-lg-4">
 						<input class="form-control" type="text" name="phone" value="{{ old('phone') }}" placeholder="شماره تلفن را وارد کنید...">
 					</div>
@@ -99,7 +124,10 @@
 					</div>
 				</div>
 				<div class="form-group row {{ $errors->has('post_code') ? 'has-error text-danger' : '' }}">
-					<label for="post_code" class="col-lg-2 col-form-label text-right text-lg-left">کد پستی:</label>
+					<label for="post_code" class="col-lg-2 col-form-label text-right text-lg-left">
+						<span class="text-danger pl-1">*</span>
+						<span>کد پستی:</span>
+					</label>
 					<div class="col-lg-4">
 						<input class="form-control" type="text" name="post_code" value="{{ old('post_code') }}" placeholder="کد پستی را وارد کنید...">
 					</div>

@@ -74,7 +74,7 @@ a:focus{
     outline: 0;
     box-shadow: none !important;
 }
-.btn-warning{
+.form-inline .btn-warning{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -148,6 +148,20 @@ ul.breadcrumb li a:hover {
   color: #4cd137;
   text-decoration: none;
 } 
+
+.modal-dialog {
+    margin: 12% auto;
+}
+.modal-sm {
+    max-width: 30%;
+}
+.modal i {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 auto 34px;
+    border-radius: 100%;
+    padding: 20px;
+}
 
 #slider{
 	background-color: #6ab04c; 

@@ -46,18 +46,29 @@ class RegisterController extends MainController
     {
         
         $this->validate($request, [
-            'name' => 'required|string|min:3|max:255',
+            'first_name' => 'required|string|min:3|max:255|regex:/^[ آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ\s]+$/',
+            'last_name' => 'required|string|min:3|max:255|regex:/^[ آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیئ\s]+$/',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'mobile' => 'required|regex:/^09[0-9]{9}$/',
+            'phone' => 'regex:/^[0-9]{2}[0-9]{9}/',
+            'post_code' => 'required|regex:/^[0-9]{10}$/',
+            'state' => 'required|alpha',
+	    'address' => 'required|max:1000',
         ]);
-        
-        $user = User::create([
-            'name' => $request->name,
+		
+	$user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'mobile' => $request->mobile,
+            'phone' => ($request->phone != null ? $request->phone : null ),
+            'post_code' => $request->post_code,
+            'address' => $request->state . ' - ' . $request->address,
         ]);
         
-        event(new UserActivation($user));
+//        event(new UserActivation($user));
         
         session()->flash('success', 'عضویت شما با موفقیت انجام شد. لطفاً جهت ورود به سایت به ایمیل خود بروید و لینک فعالسازی را کلیک کنید.');
         

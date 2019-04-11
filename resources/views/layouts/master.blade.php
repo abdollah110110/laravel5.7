@@ -20,6 +20,8 @@
 
 		@yield('breadcrumb')
 
+		@include('includes.flash')
+		
 		@yield('content')
 
 		@yield('proposal-products')
