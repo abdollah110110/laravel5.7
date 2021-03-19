@@ -7,13 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<h1>Home</h1>
-		<p><strong>Users: </strong>
-		<ul>
-			@foreach($names as $name)
-			<li>{{ $name }}</li>
-			@endforeach
-		</ul>
+		<h1>Show</h1>
+		<p><strong>User: </strong>{{ $user->name }}
 	</p>
 </body>
 </html>
