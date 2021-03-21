@@ -15,7 +15,7 @@ use Carbon\Carbon;
  */
 
 Route::get('/', function(){
-	return view('home');
+	return view('master');
 })->name('home');
 
 Route::get( '/articles', 'ArticleController@index' )->name('articles');
