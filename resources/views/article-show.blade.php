@@ -13,13 +13,14 @@
 		<a href="{{ route('articles.latest') }}">Latest Sevaral Articles</a> -
 		<a href="{{ route('article.create') }}">Create New Article</a>
 		<hr />
-		<h1>Articles</h1>
+		<h1>Show Article</h1>
 		<hr />
-		@foreach($articles as $article)
-		<h2><a href="{{ route('article.show', ['articleSlug' => $article->slug]) }}">{{ $article->title }}</a></h2>
-		<small>{{ $article->slug }}</small>
+		<h2>{{ $article->title }}</h2>
+		<p>
+			<a href="{{ route( 'article.update', ['id' => $article->id] ) }}">Update</a>&nbsp;
+			<a href="{{ route('article.delete', ['id' => $article->id]) }}">Delete</a>
+		</p>
 		<p>{{ $article->body }}</p>
-		<br />
-		@endforeach
+		<p>{{ $article->created_at }}</p>
 	</body>
 </html>

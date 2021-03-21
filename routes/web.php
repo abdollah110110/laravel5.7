@@ -14,62 +14,23 @@ use Carbon\Carbon;
   |
  */
 
-Route::get( '/articles', function() {
-	$articles = \App\Article::latest()->get();
-	return view( 'articles', compact( 'articles' ) );
-} );
+Route::get('/', function(){
+	return view('home');
+})->name('home');
 
-Route::get( '/articles/latest', function() {
-	$articles = \App\Article::lastArticles();
-	return view( 'articles', compact( 'articles' ) );
-} );
+Route::get( '/articles', 'ArticleController@index' )->name('articles');
 
-Route::get( '/articles/save', function() {
-	\App\Article::create( [
-		'user_id' => 4,
-		'title' => 'Placeat sit laborum est voluptatem',
-		'body' => 'Iure modi perferendis alias dolorum vitae repellendus blanditiis. Nesciunt mollitia veritatis quo illo ut. Ad rerum ab perferendis.',
-	] );
+Route::get( '/articles/latest', 'ArticleController@latest')->name('articles.latest');
 
-	$articles = \App\Article::lastArticles();
-	return view( 'articles', compact( 'articles' ) );
-} );
+Route::get( '/articles/show/{articleSlug}', 'ArticleController@show')->name('article.show');
 
-Route::get( '/articles/update/{id}', function($id) {
-	$article = \App\Article::find( $id );
+Route::get( '/articles/create', 'ArticleController@create' )->name('article.create');
 
-	$article->update( [
-		'title' => 'Title Updated ' . rand(),
-	] );
+Route::get( '/articles/update/{article}', 'ArticleController@update')->name('article.update');
 
-	$articles = \App\Article::lastArticles();
-	return view( 'articles', compact( 'articles' ) );
-} );
+Route::get( '/articles/delete/{article}', 'ArticleController@delete')->name('article.delete');
 
-Route::get( '/articles/delete/{id}', function($id) {
-	$article = \App\Article::find( $id );
+Route::get( '/user', 'UserController@username' )->name('username');
 
-	$article->delete();
+Route::get( '/user/show/{name}', 'UserController@show' )->name('user.show');
 
-	$articles = \App\Article::lastArticles();
-	return view( 'articles', compact( 'articles' ) );
-} );
-
-Route::get( '/', function () {
-	$users = \App\User::all();
-	$names = \App\User::pluck( 'name' );
-	return view( 'users', compact( 'names', 'users' ) );
-} );
-
-Route::get( '/{name}', function($name) {
-	$user = \App\User::where( 'name', $name )->first();
-	return view( 'show', compact( 'user' ) );
-} );
-
-Route:: get( '/post', function() {
-	return 'Post';
-} );
-
-Route:: get( '/post/{id}', function($id) {
-	return 'Post/' . $id;
-} );

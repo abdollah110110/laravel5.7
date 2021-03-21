@@ -7,12 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<h1>Home</h1>
+		<a href="{{ route('home') }}">Home</a> -
+		<a href="{{ route('username') }}">Users</a> -
+		<a href="{{ route('articles') }}">All Articles</a> -
+		<a href="{{ route('articles.latest') }}">Latest Sevaral Articles</a> -
+		<a href="{{ route('article.create') }}">Create New Article</a>
+		<hr />
+		<h1>Users</h1>
 		<p>
 			<strong>Name Links: </strong>
 			<ul>
 				@foreach($names as $name)
-				<li><a href="/{{ $name }}">{{ $name }}</a></li>
+				<li><a href="{{ route('user.show', ['name' => $name]) }}">{{ $name }}</a></li>
 				@endforeach
 			</ul>
 		</p>

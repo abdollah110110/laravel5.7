@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model {
 
-	protected $fillable=[
+	protected $fillable = [
 		'user_id',
 		'title',
 		'body',
 	];
 
-	public function scopeLastArticles( $query, $take = 3 ) {
-		return $query->latest()->take( $take )->get();
+	public function scopeLastArticles( $query ) {
+		return $query->latest()->take( 3 )->get();
 	}
 
 }
