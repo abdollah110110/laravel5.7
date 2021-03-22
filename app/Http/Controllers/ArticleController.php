@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Carbon\Carbon;
 
 class ArticleController extends Controller {
 
@@ -26,18 +27,18 @@ class ArticleController extends Controller {
 	}
 
 	public function store() {
-		$this->validate(request(), [
-			'title'=>'required',
-			'body'=>'required|min:50',
-		]);
+		$this->validate( request(), [
+			'title' => 'required',
+			'body' => 'required|min:50',
+		] );
 
 		$title = request( 'title' ) . rand( 1000, 9999 );
 		Article::create( [
-				'user_id' => 4,
-				'title' => $title,
-				'slug' => str_slug( $title ),
-				'body' => request( 'body' ),
-			] );
+			'user_id' => 4,
+			'title' => $title,
+			'slug' => str_slug( $title ),
+			'body' => request( 'body' ),
+		] );
 		return redirect( route( 'articles.latest' ) );
 	}
 
