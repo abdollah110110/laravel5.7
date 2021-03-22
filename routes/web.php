@@ -15,16 +15,18 @@ use Carbon\Carbon;
  */
 
 Route::get('/', function(){
-	return view('master');
+	return view('site.home');
 })->name('home');
 
 Route::get( '/articles', 'ArticleController@index' )->name('articles');
 
 Route::get( '/articles/latest', 'ArticleController@latest')->name('articles.latest');
 
-Route::get( '/articles/show/{articleSlug}', 'ArticleController@show')->name('article.show');
+Route::get( '/articles/show/{article}', 'ArticleController@show')->name('article.show');
 
 Route::get( '/articles/create', 'ArticleController@create' )->name('article.create');
+
+Route::post('/articles/store', 'ArticleController@store')->name('article.store');
 
 Route::get( '/articles/update/{article}', 'ArticleController@update')->name('article.update');
 

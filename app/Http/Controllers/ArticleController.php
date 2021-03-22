@@ -9,43 +9,54 @@ class ArticleController extends Controller {
 
 	public function index() {
 		$articles = Article::latest()->get();
-		return view( 'articles', compact( 'articles' ) );
+		return view( 'articles.articles', compact( 'articles' ) );
 	}
 
 	public function latest() {
 		$articles = Article::lastArticles();
-		return view( 'articles', compact( 'articles' ) );
+		return view( 'articles.articles', compact( 'articles' ) );
 	}
 
-	public function show($article) {
-		return view( 'article-show', compact( 'article' ) );
+	public function show( Article $article ) {
+		return view( 'articles.show', compact( 'article' ) );
 	}
 
 	public function create() {
-		Article::create( [
-			'user_id' => 4,
-			'title' => 'Title Inserted ' . rand( 1000, 9999 ),
-			'body' => 'Iure modi perferendis alias dolorum vitae repellendus blanditiis. Nesciunt mollitia veritatis quo illo ut. Ad rerum ab perferendis.',
-		] );
+		return view( 'articles.create' );
+	}
 
-		$articles = Article::lastArticles();
-		return view( 'articles', compact( 'articles' ) );
+	public function store() {
+		$this->validate(request(), [
+			'title'=>'required',
+			'body'=>'required|min:50',
+		]);
+
+		$title = request( 'title' ) . rand( 1000, 9999 );
+		Article::create( [
+				'user_id' => 4,
+				'title' => $title,
+				'slug' => str_slug( $title ),
+				'body' => request( 'body' ),
+			] );
+		return redirect( route( 'articles.latest' ) );
 	}
 
 	public function update( Article $article ) {
+		$title = 'Title Updated ' . rand( 1000, 9999 );
 		$article->update( [
-			'title' => 'Title Updated ' . rand( 1000, 9999 ),
+			'title' => $title,
+			'slug' => str_slug( $title ),
 		] );
 
 		$articles = Article::lastArticles();
-		return view( 'articles', compact( 'articles' ) );
+		return view( 'articles.articles', compact( 'articles' ) );
 	}
 
 	public function delete( Article $article ) {
 		$article->delete();
 
 		$articles = Article::lastArticles();
-		return view( 'articles', compact( 'articles' ) );
+		return view( 'articles.articles', compact( 'articles' ) );
 	}
 
 }
