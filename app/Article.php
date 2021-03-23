@@ -28,4 +28,8 @@ class Article extends Model {
 		return $query->latest()->take( 4 )->get();
 	}
 
+	public function user() {
+		return $this->belongsTo(User::class);
+	}
+
 }
