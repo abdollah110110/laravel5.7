@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\User;
 use Carbon\Carbon;
 
 class ArticleController extends Controller {
 
 	public function index() {
 		$articles = Article::latest()->get();
+		return view( 'articles.articles', compact( 'articles' ) );
+	}
+
+	public function userArticles(User $user) {
+		$articles = $user->articles()->get();
 		return view( 'articles.articles', compact( 'articles' ) );
 	}
 

@@ -15,6 +15,7 @@
 				<div class="dropdown-menu" aria-labelledby="dropdown01">
 					<a class="dropdown-item" href="{{ route('articles') }}">All Articles</a>
 					<a class="dropdown-item" href="{{ route('articles.latest') }}">Latests Articles</a>
+					<a class="dropdown-item" href="{{ route('userarticles', ['id' => 1]) }}">User Articles</a>
 					<a class="dropdown-item" href="{{ route('article.create') }}">Create Article</a>
 				</div>
 			</li>

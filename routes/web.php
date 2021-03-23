@@ -22,6 +22,8 @@ Route::get( '/articles', 'ArticleController@index' )->name('articles');
 
 Route::get( '/articles/latest', 'ArticleController@latest')->name('articles.latest');
 
+Route::get( '/articles/userarticles/{user}', 'ArticleController@userArticles')->name('userarticles');
+
 Route::get( '/articles/show/{article}', 'ArticleController@show')->name('article.show');
 
 Route::get( '/articles/create', 'ArticleController@create' )->name('article.create');
