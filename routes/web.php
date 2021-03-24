@@ -5,6 +5,8 @@ Route::get('/', function(){
 	return view('site.home');
 })->name('home');
 
+Route::get('/users', 'UserController@index')->name('users');
+
 Route::get( '/articles', 'ArticleController@index' )->name('articles');
 
 Route::get( '/articles/latest', 'ArticleController@latest')->name('articles.latest');

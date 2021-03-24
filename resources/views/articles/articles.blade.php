@@ -13,5 +13,7 @@
 	</div>
 	@endforeach
 </div>
+@if(isset($articles->render))
 <div class="d-flex justify-content-center my-3">{!! $articles->render() !!}</div>
+@endif
 @endsection

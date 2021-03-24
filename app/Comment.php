@@ -7,6 +7,7 @@ use Hekmatinasser\Verta\Verta;
 
 class Comment extends Model {
 	protected $fillable=[
+		'user_id',
 		'article_id',
 		'name',
 		'body',

@@ -10,12 +10,17 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="{{ route('home') }}">Home</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('users') }}">All Users</a>
+			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown01">
 					<a class="dropdown-item" href="{{ route('articles') }}">All Articles</a>
 					<a class="dropdown-item" href="{{ route('articles.latest') }}">Latests Articles</a>
-					<a class="dropdown-item" href="{{ route('userarticles', ['id' => 1]) }}">User Articles</a>
+					@if(auth()->check())
+					<a class="dropdown-item" href="{{ route('userarticles', ['id' => auth()->user()->id]) }}">{{ auth()->user()->name }}'s Articles</a>
+					@endif
 					<a class="dropdown-item" href="{{ route('article.create') }}">Create Article</a>
 				</div>
 			</li>
@@ -32,7 +37,8 @@
 			<li class="nav-item">
 				<form action="{{ route('logout') }}" method="post">
 					{!! csrf_field() !!}
-					<button class="btn btn-danger">Logout</button>
+					<span class="text-warning">{{ auth()->user()->name }}</span>
+					<button class="btn btn-danger" onclick="return confirm('Are you sure?');">Logout</button>
 				</form>
 			</li>
 			@endif

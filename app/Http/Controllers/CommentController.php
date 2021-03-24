@@ -10,13 +10,13 @@ class CommentController extends Controller {
 
 	public function store( Article $article ) {
 		$this->validate( request(), [
-			'name' => 'required',
 			'body' => 'required|min:3',
 		] );
-		
+
 		Comment::create( [
+			'user_id' => auth()->user()->id,
 			'article_id' => $article->id,
-			'name' => request( 'name' ),
+			'name' => (auth()->check() ? auth()->user()->name : request( 'name' )),
 			'body' => request( 'body' ),
 		] );
 

@@ -10,11 +10,11 @@
 <p>{{ $article->created_at }}</p>
 <p>
 	<a href="{{ route( 'article.update', ['id' => $article->id] ) }}">Update</a>&nbsp;
-	<a href="{{ route('article.delete', ['id' => $article->id]) }}" onclick="return confirm('Are you sure?');">Delete</a>
+	<a href="{{ route('article.delete', ['id' => $article->id]) }}">Delete</a>
 </p>
 <br />
 
-<h3>Comments({{ count($article->comments) }})</h3>
+<h3>Comments</h3>
 <hr />
 @if(count($article->comments))
 	@foreach($article->comments as $comment)
