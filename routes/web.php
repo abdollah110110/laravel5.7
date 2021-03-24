@@ -26,6 +26,8 @@ Route::get( '/articles/userarticles/{user}', 'ArticleController@userArticles')->
 
 Route::get( '/articles/show/{article}', 'ArticleController@show')->name('article.show');
 
+Route::post( '/article/comment/{article}', 'CommentController@store')->name('comment.store');
+
 Route::get( '/articles/create', 'ArticleController@create' )->name('article.create');
 
 Route::post('/articles/store', 'ArticleController@store')->name('article.store');

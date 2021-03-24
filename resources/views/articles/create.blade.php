@@ -12,12 +12,12 @@
 	<div class="form-group">
 		<label for="title">Title</label>
 		<input type="text" class="form-control" name="title" id="title" placeholder="title...">
-			</div>
-			<div class="form-group">
-				<label for="body">Body</label>
-				<textarea class="form-control" name="body" id="body" rows="3" placeholder="body..." style="resize:none;"></textarea>
-			</div>
-			<button type="submit" class="btn btn-success">Create Article</button>
-		</form>
+	</div>
+	<div class="form-group">
+		<label for="body">Body</label>
+		<textarea class="form-control" name="body" id="body" rows="3" placeholder="body..." style="resize:none;"></textarea>
+	</div>
+	<button type="submit" class="btn btn-success">Create Article</button>
+</form>
 
-		@endsection
+@endsection

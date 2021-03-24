@@ -21,7 +21,7 @@ class ArticleController extends Controller {
 
 	public function latest() {
 		$articles = Article::lastArticles();
-		return view( 'articles.articles', compact( 'articles' ) );
+		return view( 'articles.latest', compact( 'articles' ) );
 	}
 
 	public function show( Article $article ) {

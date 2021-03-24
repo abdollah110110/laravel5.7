@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration {
 			$table->integer( 'article_id' )->unsigned();
 			$table->string( 'name' );
 			$table->text( 'body' );
+			$table->boolean( 'active' )->default(0);
 			$table->timestamps();
 		} );
 	}
