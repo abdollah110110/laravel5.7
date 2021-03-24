@@ -5,8 +5,8 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<ul class="navbar-nav mr-auto">
+	<div class="collapse navbar-collapse justify-content-between" id="navbarsExampleDefault">
+		<ul class="navbar-nav">
 			<li class="nav-item active">
 				<a class="nav-link" href="{{ route('home') }}">Home</a>
 			</li>
@@ -19,6 +19,23 @@
 					<a class="dropdown-item" href="{{ route('article.create') }}">Create Article</a>
 				</div>
 			</li>
+		</ul>
+		<ul class="navbar-nav">
+			@if(!auth::checK())
+			<li class="nav-item">
+				<a class="btn btn-success" href="{{ route('register') }}">Register</a>
+			</li>
+			<li class="nav-item">
+				<a class="btn btn-primary" href="{{ route('login') }}">Login</a>
+			</li>
+			@else
+			<li class="nav-item">
+				<form action="{{ route('logout') }}" method="post">
+					{!! csrf_field() !!}
+					<button class="btn btn-danger">Logout</button>
+				</form>
+			</li>
+			@endif
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

@@ -38,9 +38,11 @@ class ArticleController extends Controller {
 			'body' => 'required|min:50',
 		] );
 
+
 		$title = request( 'title' ) . rand( 1000, 9999 );
+
 		Article::create( [
-			'user_id' => 4,
+			'user_id' => auth()->user()->id,
 			'title' => $title,
 			'slug' => str_slug( $title ),
 			'body' => request( 'body' ),

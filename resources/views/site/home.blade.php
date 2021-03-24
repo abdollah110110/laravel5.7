@@ -4,6 +4,6 @@
 
 <h1>Home</h1>
 <hr />
-<h2>This is home page.</h2>
+<h4>This is home page.</h4>
 
 @endsection

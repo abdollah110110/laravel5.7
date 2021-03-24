@@ -1,18 +1,5 @@
 <?php
-
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-
-/*
-  |--------------------------------------------------------------------------
-  | Web Routes
-  |--------------------------------------------------------------------------
-  |
-  | Here is where you can register web routes for your application. These
-  | routes are loaded by the RouteServiceProvider within a group which
-  | contains the "web" middleware group. Now create something great!
-  |
- */
+Auth::routes();
 
 Route::get('/', function(){
 	return view('site.home');
@@ -28,9 +15,9 @@ Route::get( '/articles/show/{article}', 'ArticleController@show')->name('article
 
 Route::post( '/article/comment/{article}', 'CommentController@store')->name('comment.store');
 
-Route::get( '/articles/create', 'ArticleController@create' )->name('article.create');
+Route::get( '/articles/create', 'ArticleController@create' )->name('article.create')->middleware('auth');
 
-Route::post('/articles/store', 'ArticleController@store')->name('article.store');
+Route::post('/articles/store', 'ArticleController@store')->name('article.store')->middleware('auth');
 
 Route::get( '/articles/update/{article}', 'ArticleController@update')->name('article.update');
 
@@ -39,4 +26,8 @@ Route::get( '/articles/delete/{article}', 'ArticleController@delete')->name('art
 Route::get( '/user', 'UserController@username' )->name('username');
 
 Route::get( '/user/show/{name}', 'UserController@show' )->name('user.show');
+
+
+
+
 
