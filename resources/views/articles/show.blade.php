@@ -8,10 +8,18 @@
 <p><strong>{{ $article->user->name }}</strong></p>
 <p>{!! $article->body !!}</p>
 <p>{{ $article->created_at }}</p>
-<p>
-	<a href="{{ route( 'article.update', ['id' => $article->id] ) }}">Update</a>&nbsp;
-	<a href="{{ route('article.delete', ['id' => $article->id]) }}" onclick="return confirm('Are you sure?');">Delete</a>
-</p>
+@if(count($tags))
+<div>
+	Tags:
+	@foreach($tags as $tag)
+	<a href="{{ route('tagarticles', ['id' => $tag->id]) }}" class="mr-2">{{ $tag->name }}</a>
+	@endforeach
+</div>
+@endif
+<div>
+<a href="{{ route( 'article.edit', ['id' => $article->id] ) }}" class="btn btn-lg btn-warning">Update</a>&nbsp;
+<a href="{{ route('article.delete', ['id' => $article->id]) }}" class="btn btn-lg btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
+</div>
 <br />
 
 <h3>Comments({{ count($article->comments) }})</h3>

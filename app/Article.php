@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Hekmatinasser\Verta\Verta;
+use App\User;
 use App\Comment;
+use App\Tag;
 
 class Article extends Model {
 
@@ -35,6 +37,10 @@ class Article extends Model {
 
 	public function comments() {
 		return $this->hasMany(Comment::class);
+	}
+
+	public function tags() {
+		return $this->belongsToMany(Tag::class);
 	}
 
 }
