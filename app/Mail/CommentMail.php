@@ -12,6 +12,7 @@ class CommentMail extends Mailable {
 
 	use Queueable,
 	 SerializesModels;
+
 	public $user;
 	public $body;
 
@@ -26,7 +27,7 @@ class CommentMail extends Mailable {
 	 * @return $this
 	 */
 	public function build() {
-		return $this->view( 'emails.comment' );
+		return $this->markdown( 'emails.comment' );
 	}
 
 }
