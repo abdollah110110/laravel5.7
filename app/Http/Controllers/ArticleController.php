@@ -58,7 +58,9 @@ class ArticleController extends Controller {
 
 		$article->tags()->attach( request( 'tags' ) );
 
-		return redirect( route( 'articles.latest' ) );
+		session()->flash( 'success', 'The article created successfully.' );
+
+		return redirect( route( 'article.show', ['id' => $article->id] ) );
 	}
 
 	public function edit( Article $article ) {

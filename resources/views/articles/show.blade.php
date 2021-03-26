@@ -4,6 +4,7 @@
 
 <h1>Show Article</h1>
 <hr />
+@include('includes.message')
 <h2 class="text-success">{{ $article->title }}</h2>
 <p><strong>{{ $article->user->name }}</strong></p>
 <p>{!! $article->body !!}</p>
