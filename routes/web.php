@@ -1,5 +1,5 @@
 <?php
 
 Route::get('/', function(){
-	return 'Hello';
+	return view('layouts.master');
 })->name('home');
