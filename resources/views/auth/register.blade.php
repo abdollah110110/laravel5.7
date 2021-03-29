@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@component('layouts.master')
 
-@section('content')
+@slot('title')
+: ثبت نام کاربر در سایت
+@endslot
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +77,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endcomponent

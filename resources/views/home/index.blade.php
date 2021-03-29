@@ -4,6 +4,8 @@
 : مشاهده مقالات
 @endslot
 
+@include('includes.jumbotron')
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
