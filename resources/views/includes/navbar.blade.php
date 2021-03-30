@@ -27,7 +27,7 @@
 			<input class="form-control mr-sm-2 border-0 rounded-0" type="search" placeholder="جستجو" aria-label="جستجو">
 			<button class="btn btn-secondary my-2 my-sm-0 rounded-0" type="submit">جستجو</button>
 		</form>
-		<ul class="navbar-nav ml-auto">
+		<ul class="navbar-nav mr-auto">
 			@if(!auth()->check())
 			<div class="btn-group">
 				<a href="{{ route('register') }}" class="btn btn-success rounded-0">ثبت نام</a>
