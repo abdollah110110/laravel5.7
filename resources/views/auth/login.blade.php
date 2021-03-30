@@ -33,8 +33,10 @@
 				</div>
 				<div class="form-group">
 					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
 					<label class="form-check-label mr-3" for="remember">مرا به خاطر بسپار</label>
+				</div>
+				<div class="form-group">
+					<a href="{{ route('password.request') }}">رمز عبور را فراموش کرده ام</a>
 				</div>
 				<div class="form-group mt-5">
 					<button type="submit" class="btn btn-primary btn-block">ورود</button>
