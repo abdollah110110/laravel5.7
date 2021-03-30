@@ -6,8 +6,8 @@
 
 <div class="container">
     <div class="row justify-content-center">
-		<div class="col-10 col-md-5 col-lg-4">
-			<h2>ثبت نام</h2>
+		<div class="col-10 col-md-5 col-lg-4 border-green-5px-padding-1rem">
+			<h2>ثبت نام کاربر در سایت</h2>
 			<hr />
 			<form action="{{ route('register') }}" method="POST">
 				{!! csrf_field() !!}

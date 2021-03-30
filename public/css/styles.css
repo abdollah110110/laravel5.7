@@ -11,6 +11,14 @@ body {
 .bg-blue {
     background-color: #22A7F0 !important;
 }
+.border-green-5px-padding-1rem{
+	border: 5px solid #28a745;
+	padding: 1rem;
+}
+.border-blue-5px-padding-1rem{
+	border: 5px solid #22a7f0;
+	padding: 1rem;
+}
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
     color: yellow;
 }
