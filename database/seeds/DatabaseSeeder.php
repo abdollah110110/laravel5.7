@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder {
 			'name' => 'عبدالله سمعی',
 			'email' => 'abdollah_sam@yahoo.com',
 			'password' => bcrypt( '123456' ),
+			'isAdmin' => 1,
 		] );
 		for ( $i = 0; $i < 5; $i ++ ) {
 			DB::table( 'users' )->insert( [

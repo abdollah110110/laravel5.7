@@ -8,6 +8,12 @@ body {
 	padding-bottom: 4.5rem;
 	background-color: #90CBDA;
 }
+.width-100px{
+	width: 100px;
+}
+.width-150px{
+	width: 150px;
+}
 .text-blue {
     color: #22A7F0 !important;
 }

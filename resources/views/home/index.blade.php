@@ -1,7 +1,7 @@
 @component('layouts.master')
 
 @slot('title')
-: مشاهده مقالات
+
 @endslot
 
 @include('includes.jumbotron')

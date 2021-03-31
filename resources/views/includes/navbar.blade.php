@@ -10,18 +10,20 @@
 				<a class="nav-link" href="{{ route('home') }}">صفحه اصلی</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">مقالات</a>
+				<a class="nav-link" href="#">لینک</a>
 			</li>
+			@if(auth()->check() && auth()->user()->isAdmin)
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					موضوعات
+					مدیریت
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">موضوع اول</a>
+					<a class="dropdown-item" href="{{ route('users.all') }}">کاربران</a>
 					<a class="dropdown-item" href="#">موضوع دوم</a>
 					<a class="dropdown-item" href="#">موضوع سوم</a>
 				</div>
 			</li>
+			@endif
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2 border-0 rounded-0" type="search" placeholder="جستجو" aria-label="جستجو">
