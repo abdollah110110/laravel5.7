@@ -1,65 +1,46 @@
-@extends('layouts.app')
+@component('layouts.master')
 
-@section('content')
+@slot('title')
+: تغییر رمز عبور
+@endslot
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+		<div class="col-10 col-md-5 col-lg-4 border-yellow-5px-padding-1rem">
+			<h2>تغییر رمز عبور</h2>
+			<hr />
+			<form action="{{ route('password.update') }}" method="POST">
+				{!! csrf_field() !!}
+				<input type="hidden" name="token" value="{{ $token }}">
+				<div class="form-group">
+					<label for="email">ایمیل:</label>
+					<input id="email" type="email" class="form-control border-0{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+					@if ($errors->has('email'))
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $errors->first('email') }}</strong>
+					</span>
+					@endif
+				</div>
+				<div class="form-group">
+					<label for="password">رمز عبور:</label>
+					<input id="password" type="password" class="form-control border-0{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+					@if ($errors->has('password'))
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $errors->first('password') }}</strong>
+					</span>
+					@endif
+				</div>
+				<div class="form-group">
+					<label for="password-confirm">تکرار رمز عبور:</label>
+					<input id="password-confirm" type="password" class="form-control border-0" name="password_confirmation" required>
+				</div>
+				<div class="form-group mt-5">
+					<button type="submit" class="btn btn-warning btn-block">تغییر رمز عبور</button>
+				</div>
+			</form>
+		</div>
     </div>
 </div>
-@endsection
+@endcomponent
