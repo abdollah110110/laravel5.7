@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder {
 	public function run() {
 		$faker = Factory::create();
 
+		DB::table( 'users' )->insert( [
+			'name' => 'عبدالله سمعی',
+			'email' => 'abdollah_sam@yahoo.com',
+			'password' => bcrypt( '123456' ),
+		] );
 		for ( $i = 0; $i < 5; $i ++ ) {
 			DB::table( 'users' )->insert( [
 				'name' => $faker->name,

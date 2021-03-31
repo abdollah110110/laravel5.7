@@ -36,7 +36,7 @@
 			@else
 			<form action="{{ route('logout') }}" method="post">
 				{!! csrf_field() !!}
-				<button type="submit" class="btn btn-danger rounded-0">خروج از حساب کاربری</button>
+				<button type="submit" class="btn btn-danger rounded-0">خروج از حساب کاربری ({{ auth()->user()->name }})</button>
 			</form>
 			@endif
 		</ul>
