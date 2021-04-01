@@ -8,8 +8,11 @@ use App\User;
 class UserController extends Controller {
 
 	public function index() {
-		$users = User::all();
-		return view( 'users.index', compact( 'users' ) );
+		if( auth()->user()->isAdmin === 1){
+			$users = User::all();
+			return view( 'users.index', compact( 'users' ) );
+		}
+		return redirect(route('home'));
 	}
 
 	public function show( User $user ) {

@@ -38,7 +38,8 @@
 			@else
 			<form action="{{ route('logout') }}" method="post">
 				{!! csrf_field() !!}
-				<button type="submit" class="btn btn-danger rounded-0">خروج از حساب کاربری ({{ auth()->user()->name }})</button>
+				<a href="{{ route('user.show', [ 'id' => auth()->user()->id ]) }}" class="btn btn-primary">مشاهده حساب کاربری ( {{ auth()->user()->name }} )</a>
+				<button type="submit" class="btn btn-danger rounded-0">خروج</button>
 			</form>
 			@endif
 		</ul>
