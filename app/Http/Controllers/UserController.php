@@ -12,4 +12,13 @@ class UserController extends Controller {
 		return view('users.index', compact('users'));
 	}
 
+	public function edit(User $user) {
+		return view('users.edit', compact('user'));
+	}
+
+	public function update(User $user) {
+		return $user;
+		return view('users.edit', compact('user'));
+	}
+
 }
