@@ -38,7 +38,7 @@
 							<div class="btn-group">
 								<a href="{{ route('user.show', ['id' => $user->id]) }}" class="btn btn-sm btn-primary">مشاهده</a>
 								<a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-sm btn-warning">ویرایش</a>
-								<a href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">حذف</a>
+								<a href="{{ route('user.destroy', ['id' => $user->id]) }}" class="btn btn-sm btn-danger">حذف</a>
 							</div>
 						</td>
 					</tr>

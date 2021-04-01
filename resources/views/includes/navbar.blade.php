@@ -10,7 +10,7 @@
 				<a class="nav-link" href="{{ route('home') }}">صفحه اصلی</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">لینک</a>
+				<a class="nav-link" href="{{ route('category.index') }}">موضوعات</a>
 			</li>
 			@if(auth()->check() && auth()->user()->isAdmin)
 			<li class="nav-item dropdown">
