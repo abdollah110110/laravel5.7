@@ -13,12 +13,12 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		if ( auth()->user()->isAdmin === 1 ) {
+		if ( auth()->check() && auth()->user()->isAdmin === 1 ) {
 			$categories = Category::orderBy( 'name', 'desc' )->get();
 			return view( 'categories.index', compact( 'categories' ) );
 		}
 		else {
-			$categories = Category::orderBy( 'name', 'desc' )->where( 'active', 1 )->get();
+			$categories = Category::orderBy( 'name', 'asc' )->where( 'active', 1 )->get();
 			return view( 'categories.index', compact( 'categories' ) );
 		}
 	}
@@ -80,7 +80,11 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy( Category $category ) {
-		//
+		if ( auth()->user()->isAdmin === 1 ) {
+			$category->delete();
+			return redirect( route( 'category.index' ) );
+		}
+		return redirect( route( 'home' ) );
 	}
 
 }
