@@ -13,9 +13,10 @@
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
+						<th scope="col" class="width-100px">تصویر</th>
 						<th scope="col">نام موضوع</th>
 						<th scope="col" class="width-100px">فعال</th>
-						<th scope="col">عملیات</th>
+						<th scope="col" class="text-left">عملیات</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -28,9 +29,10 @@
 					@foreach($categories as $category)
 					<tr>
 						<th scope="row">{{ $i++ }}</th>
+						<td>{!! ($category->image !== null ? '<img src="{{ $category->image }}" style="height:100px;">' : '<img src="/images/no-img.jpg" style="height:100px;">') !!}</td>
 						<td>{{ $category->name }}</td>
 						<td>{!! ($category->active === 1 ? $check : $times) !!}</td>
-						<td>
+						<td class="text-left">
 							<div class="btn-group">
 								<a href="{{ route('category.show', ['id' => $category->id]) }}" class="btn btn-sm btn-primary">مشاهده</a>
 								<a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-warning">ویرایش</a>
