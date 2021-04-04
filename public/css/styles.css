@@ -8,14 +8,28 @@ body {
 	padding-bottom: 4.5rem;
 	background-color: #90CBDA;
 }
+a {
+	color: #000C69;
+	text-decoration: none;
+}
+a:hover {
+	color: yellow;
+	text-decoration: none;
+}
 .minHeight-500px {
     min-height: 500px;
+}
+.width-50px{
+	width: 50px;
 }
 .width-100px{
 	width: 100px;
 }
 .width-150px{
 	width: 150px;
+}
+.width-210px{
+	width: 210px !important;
 }
 .text-blue {
     color: #22A7F0 !important;

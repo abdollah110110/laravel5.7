@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller {
 
+	public function __construct() {
+		$this->middleware( 'auth' )->except( 'index' );
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,7 +18,7 @@ class CategoryController extends Controller {
 	 */
 	public function index() {
 		if ( auth()->check() && auth()->user()->isAdmin === 1 ) {
-			$categories = Category::orderBy( 'name', 'desc' )->get();
+			$categories = Category::orderBy( 'id', 'desc' )->get();
 			return view( 'categories.index', compact( 'categories' ) );
 		}
 		else {
@@ -29,7 +33,8 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create() {
-		//
+		$categories = Category::orderBy( 'name', 'asc' )->where( 'category_id', null )->where( 'active', 1 )->get();
+		return view( 'categories.create', compact( 'categories' ) );
 	}
 
 	/**
@@ -39,7 +44,16 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store( Request $request ) {
-		//
+		$this->validate( request(), [
+			'name' => 'required|unique:categories|string|min:3|max:40',
+		] );
+		$category = new Category();
+		$category->create( [
+			'name' => request( 'name' ),
+			'category_id' => (request( 'categoryId' ) == 0 ? null : request( 'categoryId' )),
+			'active' => (is_null( request( 'active' )) ? 0 : 1),
+		] );
+		return redirect( route( 'category.index') );
 	}
 
 	/**
@@ -49,7 +63,7 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show( Category $category ) {
-		//
+		return view( 'categories.show', compact( 'category' ) );
 	}
 
 	/**
@@ -59,7 +73,8 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit( Category $category ) {
-		//
+		$categories = Category::orderBy( 'name', 'asc' )->where( 'category_id', null )->where( 'active', 1 )->get();
+		return view( 'categories.edit', compact( 'category', 'categories' ) );
 	}
 
 	/**
@@ -70,7 +85,15 @@ class CategoryController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update( Request $request, Category $category ) {
-		//
+		$this->validate( request(), [
+			'name' => 'required|string|min:3|max:40',
+		] );
+		$category->update( [
+			'name' => request( 'name' ),
+			'category_id' => (request( 'categoryId' ) == 0 ? null : request( 'categoryId' )),
+			'active' => (is_null( request( 'active' )) ? 0 : 1),
+		] );
+		return redirect( route( 'category.show', [ 'id' => $category->id ] ) );
 	}
 
 	/**
@@ -84,7 +107,15 @@ class CategoryController extends Controller {
 			$category->delete();
 			return redirect( route( 'category.index' ) );
 		}
-		return redirect( route( 'home' ) );
+		return redirect( route( 'category.index' ) );
+	}
+
+	public function severalDelete( Request $request ) {
+		foreach ( request('category') as $id ) {
+			$category = Category::findOrFail($id);
+			$category->delete();
+		}
+		return redirect( route( 'category.index' ) );
 	}
 
 }

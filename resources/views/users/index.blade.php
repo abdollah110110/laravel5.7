@@ -9,7 +9,7 @@
 		<div class="bg-light w-100 p-3">
 			<h2 class="mb-2 pb-2 w-100">کاربران</h2>
 			<hr />
-			<table class="table">
+			<table class="table border-bottom border-dark">
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">#</th>
@@ -38,7 +38,11 @@
 							<div class="btn-group">
 								<a href="{{ route('user.show', ['id' => $user->id]) }}" class="btn btn-sm btn-primary">مشاهده</a>
 								<a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-sm btn-warning">ویرایش</a>
-								<a href="{{ route('user.destroy', ['id' => $user->id]) }}" class="btn btn-sm btn-danger" onclick="return conform('آیا برای حذف این مورد مطمئن هستید؟');">حذف</a>
+								<form action="{{ route('user.destroy', ['id' => $user->id]) }}" method="post">
+									{!! csrf_field() !!}
+									{{ method_field('DELETE') }}
+									<button class="btn btn-sm btn-danger" onclick="return confirm('آیا برای حذف این مورد مطمئن هستید؟');">حذف</button>
+								</form>
 							</div>
 						</td>
 					</tr>

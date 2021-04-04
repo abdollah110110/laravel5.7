@@ -11,4 +11,6 @@ Route::get('/user/edit/{user}', 'UserController@edit')->name('user.edit')->middl
 Route::patch('/user/update/{user}', 'UserController@update')->name('user.update')->middleware('auth');
 Route::get('/user/delete/{user}', 'UserController@destroy')->name('user.destroy')->middleware('auth');
 
+
 Route::resource('category', 'CategoryController');
+Route::delete('/categories/delete','CategoryController@severalDelete')->name('several.delete')->middleware('auth');

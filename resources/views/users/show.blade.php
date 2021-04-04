@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
 		<div class="bg-light w-100 p-3 minHeight-500px">
-			<h2>مشاهده حساب کاربری <small class="text-primary">{{ $user->name }}</small></h2>
+			<h2>مشاهده حساب کاربری: <small class="text-primary">{{ $user->name }}</small></h2>
 			<hr />
 			<div class="row">
 				<div class="col-md-3">
